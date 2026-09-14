@@ -2,7 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 3000;
+let PORT = parseInt(process.env.PORT, 10) || 3000;
 const MIME = {
   '.html': 'text/html; charset=utf-8',
   '.css': 'text/css; charset=utf-8',
@@ -59,6 +59,22 @@ const server = http.createServer((req, res) => {
   });
 });
 
-server.listen(PORT, () => {
-  console.log(`Hemisphere dev server running at http://localhost:${PORT}`);
-});
+function startServer(port) {
+  server.listen(port, () => {
+    console.log('\n======================================================');
+    console.log(`  Hemisphere Hotels & Resorts - Local Dev Server`);
+    console.log(`  Open in browser:  http://localhost:${port}`);
+    console.log('======================================================\n');
+  });
+
+  server.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.warn(`Port ${port} is in use, trying http://localhost:${port + 1}...`);
+      startServer(port + 1);
+    } else {
+      console.error('Server error:', err);
+    }
+  });
+}
+
+startServer(PORT);
