@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "node server.js",
     "start": "node server.js",
-    "compile": "node build.js"
+    "build": "node build.js",
+    "compile": "node build.js",
+    "test": "node test-links.js"
   }
 }

@@ -662,7 +662,13 @@
   cursor: pointer;
   padding: 10px;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
+  min-width: 44px;
+  min-height: 44px;
+  box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .mobile-nav-toggle span {
@@ -679,18 +685,22 @@
   top: 0;
   right: -100%;
   width: 85%;
-  max-width: 400px;
+  max-width: min(400px, 88vw);
   height: 100vh;
+  height: 100dvh;
+  max-height: 100dvh;
   background: var(--hemi-ink);
   color: var(--hemi-cream);
   z-index: 2000;
-  padding: 32px 24px;
+  padding: 28px 20px;
   box-shadow: -10px 0 40px rgba(0, 0, 0, 0.5);
   transition: right var(--duration-med) var(--ease-reveal);
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  box-sizing: border-box;
 }
 
 .mobile-drawer.open {
@@ -701,7 +711,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 32px;
+  margin-bottom: 28px;
   padding-bottom: 16px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -710,8 +720,14 @@
   background: transparent;
   border: none;
   color: var(--hemi-white);
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
 }
 
 .mobile-nav-links {
@@ -762,7 +778,7 @@
    -------------------------------------------------------------------------- */
 .property-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 340px), 1fr));
   gap: var(--grid-gap);
 }
 
@@ -942,7 +958,7 @@
    -------------------------------------------------------------------------- */
 .room-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 340px), 1fr));
   gap: var(--grid-gap);
 }
 
@@ -1065,7 +1081,7 @@
    -------------------------------------------------------------------------- */
 .dining-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 330px), 1fr));
   gap: var(--grid-gap);
 }
 
@@ -1154,7 +1170,7 @@
    -------------------------------------------------------------------------- */
 .offer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 320px), 1fr));
   gap: var(--grid-gap);
 }
 
@@ -1290,7 +1306,7 @@
    -------------------------------------------------------------------------- */
 .exp-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 300px), 1fr));
   gap: 28px;
 }
 
@@ -1589,6 +1605,20 @@
    SUBPAGE TEXT READABILITY & HERO CONTRAST SYSTEM (WCAG AAA COMPLIANT)
    ========================================================================== */
 
+/* 0. Universal Hero Layout Structure */
+.hero,
+.prop-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  max-width: 100%;
+}
+
 /* 1. Universal Hero Headers Across All Subpages */
 .hero h1,
 .page-hero h1,
@@ -1706,7 +1736,7 @@
 
 .cross-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 260px), 1fr));
   gap: 24px;
 }
 
@@ -1981,39 +2011,309 @@
 }
 
 /* --------------------------------------------------------------------------
-   12. RESPONSIVE BREAKPOINTS
+   12. UNIVERSAL RESPONSIVE BREAKPOINTS & SYSTEM
+   Fluid scaling for Mobile (320px - 768px), Tablet (769px - 1140px),
+   Laptop (1141px - 1280px), and Large Desktop (1281px+)
    -------------------------------------------------------------------------- */
-@media (min-width: 1101px) and (max-width: 1280px) {
+
+/* Universal Form Utilities */
+.form-row-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.form-row-3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* 1. LAPTOPS & COMPACT DESKTOPS (1141px to 1280px) */
+@media (min-width: 1141px) and (max-width: 1280px) {
   .site-nav > ul {
-    gap: 10px;
+    gap: 8px;
   }
   .nav-link {
     font-size: 11px;
-    letter-spacing: 0.08em;
+    letter-spacing: 0.07em;
   }
   .btn-book-nav {
-    padding: 8px 16px;
+    padding: 8px 14px;
     font-size: 11px;
   }
   .lang-curr-trigger {
-    padding: 7px 10px;
-    font-size: 10.5px;
+    padding: 6px 10px;
+    font-size: 10px;
   }
 }
 
-@media (max-width: 1100px) {
-  .site-nav { display: none; }
-  .mobile-nav-toggle { display: flex; }
+/* 2. TABLET / COMPACT NAVIGATION SWITCH (<= 1140px) */
+@media (max-width: 1140px) {
+  .site-nav {
+    display: none !important;
+  }
+  .mobile-nav-toggle {
+    display: flex !important;
+  }
 }
 
+/* 3. TABLET LANDSCAPE & GENERAL TABLET (<= 1024px) */
 @media (max-width: 1024px) {
-  .footer-top { grid-template-columns: 1fr 1fr; }
+  .footer-top {
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .split-layout {
+    grid-template-columns: 1fr;
+  }
+  .sticky-map-wrapper {
+    position: relative;
+    top: 0;
+    margin-bottom: 32px;
+  }
+  .dir-card {
+    grid-template-columns: 1fr;
+  }
+  .dir-card__media {
+    aspect-ratio: 16/9;
+  }
 }
 
+/* 4. TABLET PORTRAIT & MOBILE BREAKPOINT (<= 900px) */
+@media (max-width: 900px) {
+  /* Universal Hero & Subpage Hero Stacking */
+  .hero,
+  .prop-hero {
+    height: auto !important;
+    min-height: auto !important;
+    padding: 130px 0 60px !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+  }
+
+  .hero-content,
+  .prop-hero-content {
+    margin-top: 0 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  .hero-widget-container,
+  .prop-widget-wrapper {
+    position: relative !important;
+    bottom: auto !important;
+    left: auto !important;
+    transform: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-top: 32px !important;
+    padding: 0 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Two-column editorial stories & clusters stack vertically */
+  .story-module,
+  .dest-cluster,
+  .story-grid,
+  .twin-stay-grid,
+  .contact-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  .story-module:nth-child(even),
+  .dest-cluster:nth-child(even) {
+    direction: ltr !important;
+  }
+
+  .story-module:nth-child(even) .story-module__text,
+  .dest-cluster:nth-child(even) .dest-cluster__content {
+    direction: ltr !important;
+  }
+}
+
+/* 5. MOBILE & SMALL TABLET (<= 768px) */
 @media (max-width: 768px) {
-  .footer-top { grid-template-columns: 1fr; }
-  .newsletter-form { flex-direction: column; }
-  .property-grid, .room-grid, .dining-grid, .offer-grid {
-    grid-template-columns: 1fr;
+  /* Header adjustments: hide currency button to prevent horizontal overflow; moved to drawer */
+  .header-actions .lang-curr-trigger {
+    display: none !important;
+  }
+
+  .site-header {
+    padding: 10px 0;
+  }
+
+  .site-header > .container {
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .btn-book-nav {
+    padding: 7px 14px;
+    font-size: 11px;
+    letter-spacing: 0.08em;
+  }
+
+  /* All Grids collapse to clean single-column flow */
+  .property-grid,
+  .room-grid,
+  .dining-grid,
+  .offer-grid,
+  .exp-grid,
+  .cross-grid,
+  .tier-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  /* Card content padding refinement */
+  .property-card__content,
+  .dining-card__body,
+  .room-card__body {
+    padding: 24px 18px;
+  }
+
+  .exp-card {
+    aspect-ratio: 1/1;
+    padding: 24px 20px;
+  }
+
+  /* Forms auto-collapse */
+  .form-row-2,
+  .form-row-3 {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .rfp-form-wrapper {
+    padding: 24px 16px !important;
+  }
+
+  /* Directory & Interactive Map Scaling */
+  .map-canvas-container {
+    height: 380px !important;
+  }
+
+  .sarawak-svg-map {
+    padding: 10px !important;
+  }
+
+  .dir-card__specs {
+    flex-wrap: wrap !important;
+    gap: 10px !important;
+  }
+
+  /* Footer responsiveness */
+  .footer-top {
+    grid-template-columns: 1fr !important;
+    gap: 32px;
+    margin-bottom: 40px;
+  }
+
+  .footer-newsletter {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 28px 20px !important;
+    gap: 20px !important;
+    text-align: center !important;
+  }
+
+  .newsletter-form {
+    flex-direction: column !important;
+    width: 100% !important;
+    gap: 12px !important;
+  }
+
+  .newsletter-input {
+    width: 100% !important;
+  }
+
+  .newsletter-form .btn {
+    width: 100% !important;
+  }
+
+  .footer-bottom {
+    flex-direction: column !important;
+    gap: 18px !important;
+    text-align: center !important;
+  }
+
+  .footer-legal-links {
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    gap: 12px 18px !important;
+  }
+}
+
+/* 6. COMPACT MOBILE & IPHONE SE (<= 480px) */
+@media (max-width: 480px) {
+  .logo-title {
+    font-size: 16px !important;
+    letter-spacing: 0.12em !important;
+  }
+
+  .logo-subtitle {
+    font-size: 7.5px !important;
+    letter-spacing: 0.18em !important;
+  }
+
+  .logo-emblem {
+    width: 22px !important;
+    height: 22px !important;
+  }
+
+  .site-logo a {
+    gap: 8px !important;
+  }
+
+  .btn-book-nav {
+    padding: 6px 12px !important;
+    font-size: 10.5px !important;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    padding: 13px 20px;
+  }
+
+  .filter-tabs {
+    gap: 8px !important;
+  }
+
+  .filter-tab {
+    padding: 8px 14px !important;
+    font-size: 11px !important;
+  }
+
+  .room-card__actions {
+    flex-direction: column;
+  }
+
+  .room-card__actions .btn {
+    width: 100%;
+  }
+
+  .modal-container {
+    padding: 24px 16px !important;
+    width: 95% !important;
+    margin: 10px;
+  }
+
+  .map-canvas-container {
+    height: 300px !important;
   }
 }

@@ -14,6 +14,9 @@ html {
   scroll-behavior: smooth;
   font-size: 16px;
   -webkit-text-size-adjust: 100%;
+  overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
 }
 
 body {
@@ -24,6 +27,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   overflow-x: hidden;
+  max-width: 100%;
+  width: 100%;
+  position: relative;
 }
 
 /* Accessibility: Skip to main content */
@@ -110,14 +116,15 @@ button, input, select, textarea {
   max-width: var(--container-max);
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--space-xl);
-  padding-right: var(--space-xl);
+  padding-left: clamp(16px, 3vw, var(--space-xl));
+  padding-right: clamp(16px, 3vw, var(--space-xl));
+  box-sizing: border-box;
 }
 
 @media (max-width: 768px) {
   .container {
-    padding-left: var(--space-md);
-    padding-right: var(--space-md);
+    padding-left: 16px;
+    padding-right: 16px;
   }
 }
 

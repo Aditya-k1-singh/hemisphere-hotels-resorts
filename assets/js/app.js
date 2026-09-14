@@ -62,12 +62,11 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 
   // 5. Currency & Language Selector Trigger
-  const langTrigger = document.querySelector('.lang-curr-trigger');
-  if (langTrigger) {
-    langTrigger.addEventListener('click', () => {
+  document.querySelectorAll('.lang-curr-trigger').forEach((trigger) => {
+    trigger.addEventListener('click', () => {
       alert("Language & Currency Selection:\n\nSupported Languages: English (EN), Bahasa Melayu (BM), 简体中文 (CN), 日本語 (JA)\nSupported Currencies: MYR (RM), USD ($), SGD (S$), EUR (€), GBP (£), AUD (A$)\n\nSelection is ready for localized routing.");
     });
-  }
+  });
 
   // 6. Reveal on Scroll Observer
   const revealElements = document.querySelectorAll('.reveal-on-scroll');

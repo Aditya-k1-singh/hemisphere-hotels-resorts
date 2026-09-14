@@ -59,6 +59,9 @@ class HemiBookingWidget extends HTMLElement {
           align-items: stretch;
           padding: 8px 12px;
           gap: 8px;
+          box-sizing: border-box;
+          width: 100%;
+          max-width: 100%;
         }
 
         .field-group {
@@ -68,6 +71,7 @@ class HemiBookingWidget extends HTMLElement {
           padding: 8px 12px;
           border-right: 1px solid rgba(0, 0, 0, 0.08);
           position: relative;
+          min-width: 0;
         }
 
         .field-group:last-of-type {
@@ -87,17 +91,18 @@ class HemiBookingWidget extends HTMLElement {
         select, input {
           border: none;
           background: transparent;
-          font-size: 13px;
+          font-size: 14px;
           font-weight: 500;
           color: #111517;
           outline: none;
           width: 100%;
           cursor: pointer;
           font-family: inherit;
+          box-sizing: border-box;
         }
 
         input[type="date"] {
-          font-size: 12px;
+          font-size: 13px;
         }
 
         input[type="text"] {
@@ -122,6 +127,7 @@ class HemiBookingWidget extends HTMLElement {
           align-self: center;
           height: 100%;
           min-height: 48px;
+          box-sizing: border-box;
         }
 
         .btn-check:hover {
@@ -135,13 +141,15 @@ class HemiBookingWidget extends HTMLElement {
           left: 0;
           width: 100vw;
           height: 100vh;
+          height: 100dvh;
           background: rgba(17, 21, 23, 0.85);
           backdrop-filter: blur(8px);
           z-index: 9999;
           display: none;
           align-items: center;
           justify-content: center;
-          padding: 20px;
+          padding: 16px;
+          box-sizing: border-box;
         }
 
         .booking-modal-overlay.active {
@@ -157,6 +165,11 @@ class HemiBookingWidget extends HTMLElement {
           position: relative;
           box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
           border-top: 4px solid var(--prop-accent, #C5A880);
+          box-sizing: border-box;
+          max-height: 90vh;
+          max-height: 90dvh;
+          overflow-y: auto;
+          -webkit-overflow-scrolling: touch;
         }
 
         .modal-title {
@@ -168,13 +181,18 @@ class HemiBookingWidget extends HTMLElement {
 
         .modal-close-btn {
           position: absolute;
-          top: 16px;
-          right: 16px;
+          top: 12px;
+          right: 12px;
           background: none;
           border: none;
-          font-size: 24px;
+          font-size: 26px;
           cursor: pointer;
           color: #6B7278;
+          min-width: 44px;
+          min-height: 44px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
         }
 
         .modal-form {
@@ -207,12 +225,31 @@ class HemiBookingWidget extends HTMLElement {
           }
         }
 
-        @media (max-width: 600px) {
+        @media (max-width: 768px) {
+          select, input {
+            font-size: 16px; /* Prevents auto-zoom on mobile iOS */
+            min-height: 40px;
+          }
+          label {
+            font-size: 11px;
+          }
+          .btn-check {
+            min-height: 50px;
+          }
+        }
+
+        @media (max-width: 640px) {
           .booking-bar {
             grid-template-columns: 1fr;
+            gap: 10px;
+            padding: 14px;
           }
           .btn-check {
             grid-column: span 1;
+            width: 100%;
+          }
+          .booking-modal-content {
+            padding: 24px 16px;
           }
         }
       </style>
