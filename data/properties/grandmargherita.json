@@ -1,0 +1,118 @@
+{
+  "slug": "grandmargherita",
+  "name": "Grand Margherita Hotel",
+  "type": "city-hotel",
+  "brandTagline": "An elegant address on the Sarawak River.",
+  "location": "Jalan Tunku Abdul Rahman, 93100 Kuching, Sarawak, Malaysia",
+  "cluster": "Kuching Waterfront",
+  "accentColor": "#6D2B35",
+  "accentColorDark": "#491B23",
+  "heroMedia": {
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80",
+    "alt": "Grand Margherita Hotel overlooking the Sarawak River and Kuching Waterfront"
+  },
+  "story": "As Sarawak's pioneering international-standard hotel, Grand Margherita stands proudly along the picturesque Kuching Waterfront. Offering timeless hospitality, premier city and river vistas, and the celebrated Macau Restaurant, it is an iconic address for both business dignitaries and cultural explorers.",
+  "keyStats": {
+    "rooms": 288,
+    "distanceToAirportKm": 11,
+    "distanceToCityKm": 0,
+    "ballroomCapacity": 1000,
+    "pools": 1
+  },
+  "rooms": [
+    {
+      "id": "superior-city-view",
+      "name": "Superior City View Room",
+      "size_sqm": 32,
+      "size_sqft": 344,
+      "bed": "1 King or 2 Single Beds",
+      "occupancy": "2 Adults",
+      "view": "Kuching City Skyline",
+      "description": "Refined executive comfort featuring classic warmth, ergonomic writing desk, high-speed fiber internet, and expansive city panoramas.",
+      "image": "https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["City Panorama", "Complimentary High-speed Wi-Fi", "Executive Work Station", "Ensuite Bath & Shower", "Minibar", "In-room Safe"]
+    },
+    {
+      "id": "deluxe-river-view",
+      "name": "Deluxe River View Room",
+      "size_sqm": 36,
+      "size_sqft": 387,
+      "bed": "1 King Bed",
+      "occupancy": "2 Adults, 1 Child",
+      "view": "Scenic Sarawak River & Astana Palace",
+      "description": "Uninterrupted vantage of the majestic Sarawak River and historic Astana Palace, accented with bespoke handcrafted Borneo textiles.",
+      "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["Riverfront Vista", "Plush Down Bedding", "Smart LED TV", "Coffee & Tea Facilities", "Walk-in Shower", "Bathrobes & Slippers"]
+    },
+    {
+      "id": "executive-suite",
+      "name": "Executive River Suite",
+      "size_sqm": 65,
+      "size_sqft": 700,
+      "bed": "1 King Bed",
+      "occupancy": "2 Adults, 1 Child",
+      "view": "Panoramic Riverfront & Waterfront Promenade",
+      "description": "A stately residence with an expansive separate lounge, guest powder room, executive club lounge privileges, and sunset river views.",
+      "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["Exclusive Club Lounge Access", "Separate Living Room", "Marble Bathroom with Deep Soaking Tub", "Evening Cocktails & Canapés"]
+    }
+  ],
+  "dining": [
+    {
+      "id": "macau-restaurant",
+      "name": "Macau Restaurant",
+      "concept": "Celebrated Halal Cantonese & Macanese Haute Cuisine",
+      "cuisine": "Cantonese / Macanese (Halal Certified)",
+      "hours": "11:30 AM – 2:30 PM, 6:00 PM – 10:00 PM",
+      "signatureDishes": ["Signature Roasted Duck", "Steamed Siew Mai with Truffle", "Macau Egg Tarts"],
+      "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Smart Casual"
+    },
+    {
+      "id": "orchid-garden",
+      "name": "Orchid Garden Coffee House",
+      "concept": "All-Day Dining Buffet & Local Kuching Street Classics",
+      "cuisine": "Sarawakian / International Buffet",
+      "hours": "6:00 AM – 11:00 PM",
+      "signatureDishes": ["Grand Margherita Sarawak Laksa", "Kolo Mee Special", "Nasi Lemak Pandan"],
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Casual"
+    },
+    {
+      "id": "rajah-court-lounge",
+      "name": "Rajah Court Lounge",
+      "concept": "Cocktail Lounge, Fine Wines & Evening Live Music",
+      "cuisine": "Beverages & Savory Bites",
+      "hours": "3:00 PM – Midnight",
+      "signatureDishes": ["Rajah Gin & Tonic", "Borneo Highland Tea Selection", "Artisanal Cheese Board"],
+      "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Smart Casual"
+    }
+  ],
+  "facilities": [
+    "Outdoor Riverside Swimming Pool & Sun Deck",
+    "Grand Ballroom (Column-free, up to 1,000 guests)",
+    "Fitness & Cardio Gymnasium",
+    "Direct Covered Access to Sarawak Plaza Shopping Mall",
+    "Business Center with Private Meeting Pods",
+    "On-site Concierge & Airport Transfer Fleet"
+  ],
+  "eventSpaces": [
+    {
+      "name": "Grand Ballroom",
+      "capacity": { "theatre": 1000, "banquet": 800, "classroom": 500 },
+      "sqm": 1200
+    },
+    {
+      "name": "Jasmine Meeting Room",
+      "capacity": { "theatre": 100, "banquet": 60, "classroom": 45 },
+      "sqm": 110
+    }
+  ],
+  "nearbyAttractions": [
+    { "name": "Kuching Waterfront Esplanade", "distance": "Steps away (50m)" },
+    { "name": "Tua Pek Kong Chinese Temple", "distance": "300m" },
+    { "name": "Main Bazaar & Heritage Shophouses", "distance": "500m" },
+    { "name": "Borneo Cultures Museum", "distance": "1.2 km" }
+  ]
+}

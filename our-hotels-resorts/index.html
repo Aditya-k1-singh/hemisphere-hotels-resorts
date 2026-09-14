@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Hemisphere Collection & Interactive Map | Hemisphere Hotels & Resorts</title>
+  <meta name="description" content="Explore Hemisphere's curated collection of luxury beach resorts and riverfront hotels across Kuching and the Santubong Peninsula, Sarawak.">
+  <link rel="canonical" href="https://hemisphere.my/our-hotels-resorts/">
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css?v=2.1">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+
+  <style>
+    .directory-hero {
+      padding: 160px 0 60px;
+      background: var(--hemi-ink);
+      color: var(--hemi-cream);
+      text-align: center;
+    }
+
+    .directory-hero h1 {
+      font-size: var(--text-h1);
+      margin-bottom: 16px;
+    }
+
+    .directory-hero p {
+      max-width: 680px;
+      margin: 0 auto;
+      color: var(--hemi-sand);
+      font-size: var(--text-body-large);
+    }
+
+    /* Split-screen Directory & Interactive Map Layout */
+    .map-directory-section {
+      background: var(--hemi-cream);
+      padding: 40px 0 100px;
+    }
+
+    .split-layout {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 36px;
+      align-items: start;
+    }
+
+    .sticky-map-wrapper {
+      position: sticky;
+      top: 100px;
+      background: var(--hemi-ink);
+      border-radius: 4px;
+      overflow: hidden;
+      box-shadow: var(--shadow-elevated);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .map-header {
+      padding: 16px 24px;
+      background: rgba(255, 255, 255, 0.04);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      color: var(--hemi-cream);
+    }
+
+    .map-canvas-container {
+      position: relative;
+      width: 100%;
+      height: 520px;
+      background: radial-gradient(circle at 50% 50%, #1c252b 0%, #111517 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* SVG Map Styling */
+    .sarawak-svg-map {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+    }
+
+    .map-pin {
+      cursor: pointer;
+      transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    .map-pin:hover,
+    .map-pin.active {
+      transform: scale(1.35);
+    }
+
+    .map-pin-pulse {
+      animation: pulseGlow 2s infinite;
+    }
+
+    .map-tooltip {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+      background: rgba(17, 21, 23, 0.92);
+      backdrop-filter: blur(10px);
+      border: 1px solid var(--hemi-brass);
+      border-radius: 4px;
+      padding: 16px;
+      color: var(--hemi-white);
+      display: none;
+      animation: fadeIn 0.3s ease;
+    }
+
+    .map-tooltip.active {
+      display: block;
+    }
+
+    /* Directory Listing Cards */
+    .listing-container {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .dir-card {
+      background: var(--hemi-white);
+      border-radius: 4px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 240px 1fr;
+      transition: all 0.3s var(--ease-reveal);
+      scroll-margin-top: 120px;
+    }
+
+    .dir-card:hover,
+    .dir-card.highlighted {
+      border-color: var(--prop-accent);
+      box-shadow: var(--shadow-medium);
+      transform: translateX(4px);
+    }
+
+    .dir-card__media {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .dir-card__media img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .dir-card__content {
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .dir-card__specs {
+      display: flex;
+      gap: 16px;
+      font-size: 12px;
+      color: var(--hemi-stone);
+      margin: 12px 0;
+      padding: 8px 0;
+      border-top: 1px solid var(--hemi-sand-light);
+      border-bottom: 1px solid var(--hemi-sand-light);
+    }
+
+    @media (max-width: 1024px) {
+      .split-layout {
+        grid-template-columns: 1fr;
+      }
+      .sticky-map-wrapper {
+        position: relative;
+        top: 0;
+        margin-bottom: 32px;
+      }
+      .dir-card {
+        grid-template-columns: 1fr;
+      }
+      .dir-card__media {
+        aspect-ratio: 16/9;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <!-- Brand Logo with Bespoke Luxury Emblem -->
+    <div class="site-logo">
+      <a href="/" aria-label="Hemisphere Hotels & Resorts Homepage">
+        <svg class="logo-emblem" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.6"/>
+          <path d="M 6,18 A 12,12 0 0,1 30,18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 10,18 C 10,24 26,24 26,18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="3" fill="currentColor"/>
+        </svg>
+        <div class="logo-text-group">
+          <span class="logo-title">HEMISPHERE</span>
+          <span class="logo-subtitle">Hotels & Resorts • Sarawak</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Primary Navigation with Mega-Menu -->
+    <nav class="site-nav" role="navigation" aria-label="Primary Navigation">
+      <ul>
+        <!-- 1. Stays with Mega-Menu -->
+        <li class="nav-item nav-item--has-mega">
+          <a href="/our-hotels-resorts/" class="nav-link">
+            Stays <svg class="nav-chevron" width="8" height="8" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </a>
+          <div class="mega-menu" role="region" aria-label="The Hemisphere Collection">
+            <div class="container">
+              <div class="mega-menu-header">
+                <div>
+                  <h3 class="mega-menu-title">The Hemisphere Collection</h3>
+                  <span class="mega-menu-subtitle">Five Distinct Sanctuaries in Sarawak, Borneo</span>
+                </div>
+                <a href="/our-hotels-resorts/" class="btn--text" style="color: var(--hemi-brass-light);">
+                  Interactive Directory & Map <span class="arrow">&rarr;</span>
+                </a>
+              </div>
+
+              <div class="mega-grid">
+                <!-- 1. Damai Beach Resort -->
+                <a href="/damaibeachresort/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">Santubong Peninsula</span>
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=400&q=80" alt="Damai Beach Resort" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Damai Beach Resort</h4>
+                    <p>Where rainforest meets the South China Sea. Beachfront chalets & clifftop pool.</p>
+                    <span class="mega-link">Explore Resort <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+
+                <!-- 2. Damai Lagoon Resort -->
+                <a href="/damailagoon/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">Coastal Wellness</span>
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=400&q=80" alt="Damai Lagoon Resort" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Damai Lagoon Resort</h4>
+                    <p>Nature, wellness & Eden Spa. Secluded bay with horizon infinity pool.</p>
+                    <span class="mega-link">Explore Resort <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+
+                <!-- 3. Grand Margherita Hotel -->
+                <a href="/grandmargherita/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">Kuching Waterfront</span>
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Grand Margherita Hotel" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Grand Margherita Hotel</h4>
+                    <p>Sarawak's iconic riverfront address. Halal Cantonese Macau Restaurant.</p>
+                    <span class="mega-link">Explore Hotel <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+
+                <!-- 4. Riverside Majestic Puteri -->
+                <a href="/riversidemajestic-puteri/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">5-Star Landmark</span>
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Riverside Majestic Puteri" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Riverside Majestic Puteri</h4>
+                    <p>Contemporary executive luxury. Puteri Ballroom for 1,200 & River Palace.</p>
+                    <span class="mega-link">Explore Hotel <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+
+                <!-- 5. Riverside Majestic Astana -->
+                <a href="/riversidemajestic-astana/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">Boutique Skyline</span>
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=400&q=80" alt="Riverside Majestic Astana" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Riverside Majestic Astana</h4>
+                    <p>Panoramic glass suites & Suasana on 18 rooftop fine dining.</p>
+                    <span class="mega-link">Explore Hotel <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mega-footer">
+                <div style="font-size: 12px; color: var(--hemi-sand); display: flex; gap: 24px;">
+                  <span>🏖️ <strong>Resort Collection:</strong> Santubong Coast</span>
+                  <span>🏛️ <strong>City Collection:</strong> Kuching Waterfront</span>
+                </div>
+                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hemi-brass); font-weight: 700;">
+                  ✓ Best Rate Guarantee Direct with Hemisphere
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 2. Destinations with Dropdown -->
+        <li class="nav-item">
+          <a href="/destinations/" class="nav-link">
+            Destinations <svg class="nav-chevron" width="8" height="8" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="/destinations/#santubong">
+              <strong>Santubong Peninsula</strong>
+              <span>Mount Santubong, Coastal Rainforest & Beaches</span>
+            </a>
+            <a href="/destinations/#kuching">
+              <strong>Kuching Waterfront</strong>
+              <span>Sarawak River Esplanade, Heritage & Culture</span>
+            </a>
+            <a href="/destinations/" style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 6px; font-weight: 700; color: var(--hemi-brass);">
+              Explore Full Destination Guide <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- 3. Experiences -->
+        <li class="nav-item">
+          <a href="/experiences/" class="nav-link">Experiences</a>
+        </li>
+
+        <!-- 4. Offers with Badge -->
+        <li class="nav-item">
+          <a href="/offers/" class="nav-link">
+            Offers <span class="nav-badge">Privileges</span>
+          </a>
+        </li>
+
+        <!-- 5. Meetings & Weddings -->
+        <li class="nav-item">
+          <a href="/meetings-weddings/" class="nav-link">Meetings & Weddings</a>
+        </li>
+
+        <!-- 6. Loyalty -->
+        <li class="nav-item">
+          <a href="/loyalty/" class="nav-link">Loyalty</a>
+        </li>
+
+        <!-- 7. About -->
+        <li class="nav-item">
+          <a href="/about/" class="nav-link">About</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <button class="lang-curr-trigger" aria-label="Select Language and Currency" title="Select Language / Currency">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>EN</span> | <span>MYR</span>
+      </button>
+
+      <button class="btn-book-nav" data-trigger-booking aria-label="Open availability search and direct rates">
+        Book Now
+      </button>
+      
+      <button class="mobile-nav-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+  <!-- Universal Luxury Booking Modal for Header & Subpages -->
+  <hemi-booking-widget id="global-booking-modal" modal-only="true"></hemi-booking-widget>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+  <div class="mobile-drawer-header">
+    <div class="site-logo">
+      <span class="logo-title">HEMISPHERE</span>
+      <span class="logo-subtitle">Sarawak Collection</span>
+    </div>
+    <button class="mobile-drawer-close" aria-label="Close mobile navigation">&times;</button>
+  </div>
+
+  <nav class="mobile-nav-links">
+    <a href="/our-hotels-resorts/" style="font-weight: 700; color: var(--hemi-brass-light);">The Collection Overview</a>
+    <div style="padding-left: 12px; display: flex; flex-direction: column; gap: 14px; margin: 8px 0 16px; border-left: 2px solid var(--hemi-brass);">
+      <a href="/damaibeachresort/" style="font-size: 18px;">Damai Beach Resort</a>
+      <a href="/damailagoon/" style="font-size: 18px;">Damai Lagoon Resort</a>
+      <a href="/grandmargherita/" style="font-size: 18px;">Grand Margherita Hotel</a>
+      <a href="/riversidemajestic-puteri/" style="font-size: 18px;">Riverside Majestic — Puteri</a>
+      <a href="/riversidemajestic-astana/" style="font-size: 18px;">Riverside Majestic — Astana</a>
+    </div>
+    <div class="divider divider--light"></div>
+    <a href="/destinations/">Sarawak Destinations</a>
+    <a href="/experiences/">Curated Experiences</a>
+    <a href="/offers/">Exclusive Offers</a>
+    <a href="/meetings-weddings/">Meetings & Celebrations</a>
+    <a href="/loyalty/">Hemisphere Discovery</a>
+    <a href="/about/">Our Philosophy</a>
+    <a href="/contact/">Concierge & Contact</a>
+  </nav>
+
+  <div class="mobile-drawer-footer">
+    <button class="btn btn--white" style="width:100%; margin-bottom:12px; font-weight:700;" data-trigger-booking>Reserve Your Stay</button>
+    <p style="font-size:11px; color:var(--hemi-sand); text-align:center; margin:0;">Kuching Waterfront • Santubong Peninsula • Sarawak</p>
+  </div>
+</div>
+<div class="drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+
+
+
+
+
+
+
+
+
+
+  <main id="main-content">
+    <section class="directory-hero">
+      <div class="container">
+        <span class="eyebrow" style="color: var(--hemi-brass);">The Hemisphere Collection</span>
+        <h1>Five Places. One Hemisphere.</h1>
+        <p>Explore our coastal beach sanctuaries in Santubong and vibrant riverfront hotels in central Kuching. Discover your ideal Sarawak itinerary.</p>
+
+        <div class="filter-tabs" style="margin-top: 36px; justify-content: center;">
+          <button class="filter-tab active" onclick="filterDirectory('all', this)">All Properties (5)</button>
+          <button class="filter-tab" onclick="filterDirectory('resort', this)">Coastal Resorts (2)</button>
+          <button class="filter-tab" onclick="filterDirectory('city', this)">City Hotels (3)</button>
+        </div>
+      </div>
+    </section>
+
+    <section class="map-directory-section">
+      <div class="container">
+        <div class="split-layout">
+          
+          <!-- Left: Directory Cards -->
+          <div class="listing-container" id="directory-listing">
+            
+            <!-- Card 1: Damai Beach Resort -->
+            <article class="dir-card" id="card-damaibeachresort" data-category="resort" data-pin="pin-dbr" style="--prop-accent: #1C5D57;">
+              <div class="dir-card__media">
+                <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=600&q=80" alt="Damai Beach Resort">
+              </div>
+              <div class="dir-card__content">
+                <div>
+                  <span class="eyebrow" style="color: #1C5D57;">Coastal Resort • Santubong</span>
+                  <h2 style="font-size: 24px; margin-bottom: 6px;">Damai Beach Resort</h2>
+                  <p style="font-size: 13px; color: var(--hemi-stone); margin-bottom: 0;">Where rainforest meets the South China Sea. Nestled on 90 acres of primeval rainforest with private sandy beaches, clifftop pools, and authentic timber chalets.</p>
+                </div>
+                <div class="dir-card__specs">
+                  <span>🏖️ Private Beach</span>
+                  <span>🏊 2 Pools</span>
+                  <span>🛏️ 252 Chalets & Rooms</span>
+                  <span>✈️ 42km to Airport</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <a href="/damaibeachresort/" class="btn--text" style="color: #1C5D57;">Explore Resort &rarr;</a>
+                  <button class="btn btn--sm" style="background: #1C5D57; border-color: #1C5D57;" data-trigger-booking>Check Rates</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 2: Damai Lagoon Resort -->
+            <article class="dir-card" id="card-damailagoon" data-category="resort" data-pin="pin-dlr" style="--prop-accent: #215368;">
+              <div class="dir-card__media">
+                <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=600&q=80" alt="Damai Lagoon Resort">
+              </div>
+              <div class="dir-card__content">
+                <div>
+                  <span class="eyebrow" style="color: #215368;">Wellness Sanctuary • Santubong</span>
+                  <h2 style="font-size: 24px; margin-bottom: 6px;">Damai Lagoon Resort</h2>
+                  <p style="font-size: 13px; color: var(--hemi-stone); margin-bottom: 0;">Nature, wellness and effortless escape. A serene coastal sanctuary dedicated to holistic well-being, featuring Eden Damai Wellness spa and breathtaking horizon infinity pool.</p>
+                </div>
+                <div class="dir-card__specs">
+                  <span>🌿 Eden Spa</span>
+                  <span>🌊 Lagoon Cove</span>
+                  <span>🛏️ 160 Suites</span>
+                  <span>✈️ 43km to Airport</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <a href="/damailagoon/" class="btn--text" style="color: #215368;">Explore Resort &rarr;</a>
+                  <button class="btn btn--sm" style="background: #215368; border-color: #215368;" data-trigger-booking>Check Rates</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 3: Grand Margherita Hotel -->
+            <article class="dir-card" id="card-grandmargherita" data-category="city" data-pin="pin-gmh" style="--prop-accent: #6D2B35;">
+              <div class="dir-card__media">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Grand Margherita Hotel">
+              </div>
+              <div class="dir-card__content">
+                <div>
+                  <span class="eyebrow" style="color: #6D2B35;">Riverfront Landmark • Kuching</span>
+                  <h2 style="font-size: 24px; margin-bottom: 6px;">Grand Margherita Hotel</h2>
+                  <p style="font-size: 13px; color: var(--hemi-stone); margin-bottom: 0;">An elegant address on the Sarawak River. Sarawak's first international 4-star hotel, featuring the iconic Halal-certified Macau Restaurant, Grand Ballroom, and waterfront promenade access.</p>
+                </div>
+                <div class="dir-card__specs">
+                  <span>🥢 Macau Restaurant</span>
+                  <span>🏛️ 1,000 Pax Ballroom</span>
+                  <span>🛏️ 288 Rooms</span>
+                  <span>✈️ 11km to Airport</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <a href="/grandmargherita/" class="btn--text" style="color: #6D2B35;">Explore Hotel &rarr;</a>
+                  <button class="btn btn--sm" style="background: #6D2B35; border-color: #6D2B35;" data-trigger-booking>Check Rates</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 4: Riverside Majestic Hotel Puteri Wing -->
+            <article class="dir-card" id="card-riversidemajestic-puteri" data-category="city" data-pin="pin-rmp" style="--prop-accent: #1B3B5C;">
+              <div class="dir-card__media">
+                <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Riverside Majestic Puteri Wing">
+              </div>
+              <div class="dir-card__content">
+                <div>
+                  <span class="eyebrow" style="color: #1B3B5C;">5-Star City Hotel • Kuching</span>
+                  <h2 style="font-size: 24px; margin-bottom: 6px;">Riverside Majestic — Puteri Wing</h2>
+                  <p style="font-size: 13px; color: var(--hemi-stone); margin-bottom: 0;">Contemporary luxury beside Kuching's waterfront. The preferred stage for regional summits and executive gatherings, featuring the Puteri Grand Ballroom and River Palace Cantonese dining.</p>
+                </div>
+                <div class="dir-card__specs">
+                  <span>🏢 Puteri Ballroom (1,200)</span>
+                  <span>🥟 River Palace</span>
+                  <span>🛏️ 241 Rooms</span>
+                  <span>✈️ 11km to Airport</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <a href="/riversidemajestic-puteri/" class="btn--text" style="color: #1B3B5C;">Explore Hotel &rarr;</a>
+                  <button class="btn btn--sm" style="background: #1B3B5C; border-color: #1B3B5C;" data-trigger-booking>Check Rates</button>
+                </div>
+              </div>
+            </article>
+
+            <!-- Card 5: Riverside Majestic Hotel Astana Wing -->
+            <article class="dir-card" id="card-riversidemajestic-astana" data-category="city" data-pin="pin-rma" style="--prop-accent: #10403B;">
+              <div class="dir-card__media">
+                <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=600&q=80" alt="Riverside Majestic Astana Wing">
+              </div>
+              <div class="dir-card__content">
+                <div>
+                  <span class="eyebrow" style="color: #10403B;">Boutique Luxury Tower • Kuching</span>
+                  <h2 style="font-size: 24px; margin-bottom: 6px;">Riverside Majestic — Astana Wing</h2>
+                  <p style="font-size: 13px; color: var(--hemi-stone); margin-bottom: 0;">Panoramic city and river views at the heart of Kuching. Elevated contemporary design, floor-to-ceiling glass suites with deep soaking tubs, and Suasana on 18 rooftop fine dining.</p>
+                </div>
+                <div class="dir-card__specs">
+                  <span>🍸 Suasana on 18</span>
+                  <span>🏊 Skyline Pool</span>
+                  <span>🛏️ 272 Suites</span>
+                  <span>✈️ 11km to Airport</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                  <a href="/riversidemajestic-astana/" class="btn--text" style="color: #10403B;">Explore Hotel &rarr;</a>
+                  <button class="btn btn--sm" style="background: #10403B; border-color: #10403B;" data-trigger-booking>Check Rates</button>
+                </div>
+              </div>
+            </article>
+          </div>
+
+          <!-- Right: Interactive Map Widget -->
+          <div class="sticky-map-wrapper">
+            <div class="map-header">
+              <div>
+                <strong style="font-size: 13px; text-transform: uppercase; letter-spacing: 0.1em; color: var(--hemi-brass);">Sarawak Destination Map</strong>
+                <div style="font-size: 11px; color: var(--hemi-sand);">Click any pin to inspect property</div>
+              </div>
+              <span class="badge" style="background: rgba(197, 168, 128, 0.2); color: var(--hemi-brass); border-color: var(--hemi-brass);">5 Properties</span>
+            </div>
+
+            <div class="map-canvas-container">
+              <!-- Custom Minimalist SVG Map of Sarawak Coast & Kuching River -->
+              <svg class="sarawak-svg-map" viewBox="0 0 600 500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Interactive map showing Hemisphere properties in Sarawak">
+                <defs>
+                  <linearGradient id="waterGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                    <stop offset="0%" stop-color="#142129"/>
+                    <stop offset="100%" stop-color="#0d1418"/>
+                  </linearGradient>
+                  <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+                    <feGaussianBlur stdDeviation="4" result="blur"/>
+                    <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+                  </filter>
+                </defs>
+
+                <!-- South China Sea & Coastline contour -->
+                <path d="M 0,0 L 600,0 L 600,160 Q 420,180 320,240 T 150,340 Q 80,420 0,500 Z" fill="url(#waterGrad)" opacity="0.6" />
+                <path d="M 120,40 Q 220,120 320,180 T 520,220" fill="none" stroke="#253540" stroke-width="2" stroke-dasharray="4,4" />
+
+                <!-- Santubong Mountain Outline -->
+                <polygon points="180,140 220,80 260,140" fill="#1C2E2A" stroke="#2C4841" stroke-width="1.5" opacity="0.8" />
+                <text x="220" y="70" fill="#C5A880" font-size="10" text-anchor="middle" font-family="sans-serif" letter-spacing="1">MT. SANTUBONG</text>
+
+                <!-- Sarawak River Flowing to Kuching -->
+                <path d="M 280,500 C 310,430 330,370 380,350 S 460,330 520,360" fill="none" stroke="#375568" stroke-width="12" stroke-linecap="round" opacity="0.7" />
+                <text x="440" y="380" fill="#6B8A9E" font-size="10" font-family="sans-serif" letter-spacing="1">SARAWAK RIVER</text>
+
+                <!-- Cluster Label: Santubong Coast -->
+                <rect x="50" y="90" width="130" height="24" rx="2" fill="#111517" stroke="#1C5D57" stroke-width="1" />
+                <text x="115" y="106" fill="#A2D2CE" font-size="9" text-anchor="middle" font-family="sans-serif" font-weight="bold" letter-spacing="1">DAMAI PENINSULA</text>
+
+                <!-- Cluster Label: Kuching City -->
+                <rect x="360" y="270" width="140" height="24" rx="2" fill="#111517" stroke="#C5A880" stroke-width="1" />
+                <text x="430" y="286" fill="#E0CEB5" font-size="9" text-anchor="middle" font-family="sans-serif" font-weight="bold" letter-spacing="1">KUCHING WATERFRONT</text>
+
+                <!-- Pins: Santubong Cluster -->
+                <!-- Pin 1: Damai Beach Resort -->
+                <g class="map-pin" id="pin-dbr" onclick="selectPin('card-damaibeachresort', 'Damai Beach Resort', 'Teluk Bandung, Santubong')">
+                  <circle cx="150" cy="130" r="14" fill="#1C5D57" opacity="0.3" class="map-pin-pulse" />
+                  <circle cx="150" cy="130" r="7" fill="#3D857E" stroke="#FFF" stroke-width="2" />
+                  <text x="150" y="155" fill="#FFF" font-size="10" text-anchor="middle" font-weight="bold">Damai Beach</text>
+                </g>
+
+                <!-- Pin 2: Damai Lagoon Resort -->
+                <g class="map-pin" id="pin-dlr" onclick="selectPin('card-damailagoon', 'Damai Lagoon Resort', 'Teluk Penyuk, Santubong')">
+                  <circle cx="210" cy="160" r="14" fill="#215368" opacity="0.3" class="map-pin-pulse" />
+                  <circle cx="210" cy="160" r="7" fill="#417A93" stroke="#FFF" stroke-width="2" />
+                  <text x="210" y="185" fill="#FFF" font-size="10" text-anchor="middle" font-weight="bold">Damai Lagoon</text>
+                </g>
+
+                <!-- Pins: Kuching Cluster -->
+                <!-- Pin 3: Grand Margherita Hotel -->
+                <g class="map-pin" id="pin-gmh" onclick="selectPin('card-grandmargherita', 'Grand Margherita Hotel', 'Jalan Tunku Abdul Rahman, Kuching')">
+                  <circle cx="390" cy="340" r="14" fill="#6D2B35" opacity="0.3" class="map-pin-pulse" />
+                  <circle cx="390" cy="340" r="7" fill="#944450" stroke="#FFF" stroke-width="2" />
+                  <text x="390" y="325" fill="#FFF" font-size="10" text-anchor="middle" font-weight="bold">Grand Margherita</text>
+                </g>
+
+                <!-- Pin 4: Riverside Majestic Puteri -->
+                <g class="map-pin" id="pin-rmp" onclick="selectPin('card-riversidemajestic-puteri', 'Riverside Majestic — Puteri', 'Opposite Grand Margherita, Kuching')">
+                  <circle cx="430" cy="330" r="14" fill="#1B3B5C" opacity="0.3" class="map-pin-pulse" />
+                  <circle cx="430" cy="330" r="7" fill="#375E88" stroke="#FFF" stroke-width="2" />
+                  <text x="430" y="315" fill="#FFF" font-size="10" text-anchor="middle" font-weight="bold">Riverside Puteri</text>
+                </g>
+
+                <!-- Pin 5: Riverside Majestic Astana -->
+                <g class="map-pin" id="pin-rma" onclick="selectPin('card-riversidemajestic-astana', 'Riverside Majestic — Astana', 'Astana Tower, Kuching')">
+                  <circle cx="465" cy="345" r="14" fill="#10403B" opacity="0.3" class="map-pin-pulse" />
+                  <circle cx="465" cy="345" r="7" fill="#2B6962" stroke="#FFF" stroke-width="2" />
+                  <text x="465" y="370" fill="#FFF" font-size="10" text-anchor="middle" font-weight="bold">Riverside Astana</text>
+                </g>
+              </svg>
+
+              <!-- Dynamic Tooltip -->
+              <div class="map-tooltip" id="map-tooltip-box">
+                <strong id="tooltip-title" style="font-size: 14px; font-family: var(--font-display);">Select a Property</strong>
+                <p id="tooltip-desc" style="font-size: 11px; color: var(--hemi-sand); margin: 4px 0 0;">Interactive map synchronized with portfolio listings.</p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3 style="font-family: var(--font-display); letter-spacing: 0.12em;">HEMISPHERE</h3>
+        <p style="color: var(--hemi-brass); font-family: var(--font-display); font-size: 16px; margin-bottom: 12px;">One Hemisphere. Many Ways to Belong.</p>
+        <p>A distinguished portfolio of luxury beachfront resorts and iconic riverfront city hotels celebrating the nature, culture, and heartfelt hospitality of Sarawak, Malaysia.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Stays</h4>
+        <ul>
+          <li><a href="/damaibeachresort/">Damai Beach Resort</a></li>
+          <li><a href="/damailagoon/">Damai Lagoon Resort</a></li>
+          <li><a href="/grandmargherita/">Grand Margherita Hotel</a></li>
+          <li><a href="/riversidemajestic-puteri/">Riverside Majestic — Puteri</a></li>
+          <li><a href="/riversidemajestic-astana/">Riverside Majestic — Astana</a></li>
+          <li><a href="/our-hotels-resorts/">Interactive Map Directory</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Discover</h4>
+        <ul>
+          <li><a href="/destinations/">Sarawak & Kuching Guide</a></li>
+          <li><a href="/experiences/">Curated Experiences</a></li>
+          <li><a href="/offers/">Offers & Packages</a></li>
+          <li><a href="/meetings-weddings/">Meetings & Weddings</a></li>
+          <li><a href="/loyalty/">Hemisphere Discovery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/about/">Our Philosophy</a></li>
+          <li><a href="/contact/">Concierge & Reservations</a></li>
+          <li><a href="/destinations/#sustainability">Sustainability & Heritage</a></li>
+          <li><a href="/contact/#press">Media Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <div class="newsletter-text">
+        <h4>Stay Connected to Sarawak</h4>
+        <p>Subscribe to receive private invitations, bespoke seasonal privileges, and travel stories from Borneo.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Hemisphere Private Invitations.');">
+        <input type="email" class="newsletter-input" placeholder="Your Email Address" required aria-label="Your Email Address">
+        <button type="submit" class="btn btn--white" style="font-size: 11px;">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; <span id="footer-year">2026</span> Hemisphere Hotels & Resorts. SEDC Sarawak Hospitality Division. All rights reserved.
+      </div>
+      <div class="footer-legal-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Stay</a>
+        <a href="/cookie-policy/">Cookie Preferences</a>
+        <a href="/accessibility/">Accessibility</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  const y = document.getElementById('footer-year');
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+
+
+  <script src="/assets/js/booking-widget.js" type="module"></script>
+  <script src="/assets/js/app.js" type="module"></script>
+  <script>
+    function filterDirectory(cat, btn) {
+      document.querySelectorAll('.filter-tab').forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+
+      const cards = document.querySelectorAll('.dir-card');
+      cards.forEach(card => {
+        if (cat === 'all' || card.getAttribute('data-category') === cat) {
+          card.style.display = 'grid';
+        } else {
+          card.style.display = 'none';
+        }
+      });
+    }
+
+    function selectPin(cardId, name, location) {
+      // Highlight card
+      document.querySelectorAll('.dir-card').forEach(c => c.classList.remove('highlighted'));
+      const targetCard = document.getElementById(cardId);
+      if (targetCard) {
+        targetCard.classList.add('highlighted');
+        targetCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      }
+
+      // Show tooltip
+      const tooltip = document.getElementById('map-tooltip-box');
+      const title = document.getElementById('tooltip-title');
+      const desc = document.getElementById('tooltip-desc');
+      if (tooltip && title && desc) {
+        title.textContent = name;
+        desc.textContent = location;
+        tooltip.classList.add('active');
+      }
+    }
+  </script>
+</body>
+</html>

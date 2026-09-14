@@ -1,0 +1,72 @@
+[
+  {
+    "id": "puteri-grand-ballroom",
+    "venue": "Puteri Grand Ballroom",
+    "property": "Riverside Majestic Hotel — Puteri Wing",
+    "propertySlug": "riversidemajestic-puteri",
+    "setting": "City Riverfront",
+    "sqm": 1350,
+    "ceilingM": 6.5,
+    "theatre": 1200,
+    "banquet": 850,
+    "classroom": 600,
+    "reception": 1400,
+    "features": ["Column-free Grand Ballroom", "State-of-the-art LED Video Wall", "VIP Holding Rooms", "Dedicated Pre-function Foyer"]
+  },
+  {
+    "id": "grand-ballroom-margherita",
+    "venue": "Grand Ballroom",
+    "property": "Grand Margherita Hotel",
+    "propertySlug": "grandmargherita",
+    "setting": "City Riverfront",
+    "sqm": 1200,
+    "ceilingM": 5.8,
+    "theatre": 1000,
+    "banquet": 800,
+    "classroom": 500,
+    "reception": 1100,
+    "features": ["Riverfront Heritage Setting", "Direct Escalator Access to Sarawak Plaza", "Flexible Partition Walls", "High-speed Hybrid Conferencing"]
+  },
+  {
+    "id": "santubong-grand-ballroom",
+    "venue": "Santubong Grand Ballroom",
+    "property": "Damai Beach Resort",
+    "propertySlug": "damaibeachresort",
+    "setting": "Rainforest & Beach",
+    "sqm": 850,
+    "ceilingM": 5.5,
+    "theatre": 800,
+    "banquet": 600,
+    "classroom": 400,
+    "reception": 850,
+    "features": ["Resort Conference Haven", "Surrounded by Tropical Rainforest", "Outdoor Beach Teambuilding Lawns", "Banquet Stage"]
+  },
+  {
+    "id": "astana-sky-hall",
+    "venue": "Astana Sky Hall",
+    "property": "Riverside Majestic Hotel — Astana Wing",
+    "propertySlug": "riversidemajestic-astana",
+    "setting": "City Skyline Rooftop",
+    "sqm": 320,
+    "ceilingM": 4.5,
+    "theatre": 250,
+    "banquet": 180,
+    "classroom": 120,
+    "reception": 300,
+    "features": ["Elevated Panoramic River Views", "Natural Daylight Floor-to-Ceiling Windows", "Chic Modern Architectural Design", "Integrated Acoustic Sound"]
+  },
+  {
+    "id": "penyuk-ocean-pavilion",
+    "venue": "Penyuk Ocean Pavilion & Lawns",
+    "property": "Damai Lagoon Resort",
+    "propertySlug": "damailagoon",
+    "setting": "Private Beach Cove",
+    "sqm": 240,
+    "ceilingM": 4.2,
+    "theatre": 200,
+    "banquet": 150,
+    "classroom": 100,
+    "reception": 250,
+    "features": ["Direct Ocean Frontage", "Bespoke Sunset Wedding Ceremonies", "Alfresco Dining Terrace", "Secluded Beach Cove Setting"]
+  }
+]

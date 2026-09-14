@@ -1,0 +1,170 @@
+[
+  {
+    "legacyDomain": "damaibeachresort.com",
+    "oldUrl": "https://www.damaibeachresort.com/",
+    "newUrl": "https://hemisphere.my/damaibeachresort/",
+    "statusCode": 301,
+    "pageType": "home",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "damaibeachresort.com",
+    "oldUrl": "https://www.damaibeachresort.com/accommodation.php",
+    "newUrl": "https://hemisphere.my/damaibeachresort/rooms/",
+    "statusCode": 301,
+    "pageType": "rooms",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "damaibeachresort.com",
+    "oldUrl": "https://www.damaibeachresort.com/dining.php",
+    "newUrl": "https://hemisphere.my/damaibeachresort/dining/",
+    "statusCode": 301,
+    "pageType": "dining",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "damaibeachresort.com",
+    "oldUrl": "https://www.damaibeachresort.com/meetings-events.php",
+    "newUrl": "https://hemisphere.my/meetings-weddings/",
+    "statusCode": 301,
+    "pageType": "events",
+    "priority": "Medium"
+  },
+  {
+    "legacyDomain": "damaibeachresort.com",
+    "oldUrl": "https://www.damaibeachresort.com/promotions.php",
+    "newUrl": "https://hemisphere.my/offers/",
+    "statusCode": 301,
+    "pageType": "offers",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "damailagoon.my",
+    "oldUrl": "https://www.damailagoon.my/",
+    "newUrl": "https://hemisphere.my/damailagoon/",
+    "statusCode": 301,
+    "pageType": "home",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "damailagoon.my",
+    "oldUrl": "https://www.damailagoon.my/rooms/",
+    "newUrl": "https://hemisphere.my/damailagoon/rooms/",
+    "statusCode": 301,
+    "pageType": "rooms",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "damailagoon.my",
+    "oldUrl": "https://www.damailagoon.my/eden-spa/",
+    "newUrl": "https://hemisphere.my/experiences/",
+    "statusCode": 301,
+    "pageType": "wellness",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "damailagoon.my",
+    "oldUrl": "https://www.damailagoon.my/dining/",
+    "newUrl": "https://hemisphere.my/damailagoon/dining/",
+    "statusCode": 301,
+    "pageType": "dining",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "grandmargherita.com",
+    "oldUrl": "https://www.grandmargherita.com/",
+    "newUrl": "https://hemisphere.my/grandmargherita/",
+    "statusCode": 301,
+    "pageType": "home",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "grandmargherita.com",
+    "oldUrl": "https://www.grandmargherita.com/rooms/",
+    "newUrl": "https://hemisphere.my/grandmargherita/rooms/",
+    "statusCode": 301,
+    "pageType": "rooms",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "grandmargherita.com",
+    "oldUrl": "https://www.grandmargherita.com/macau-restaurant/",
+    "newUrl": "https://hemisphere.my/grandmargherita/dining/",
+    "statusCode": 301,
+    "pageType": "dining",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "grandmargherita.com",
+    "oldUrl": "https://www.grandmargherita.com/banquets-meetings/",
+    "newUrl": "https://hemisphere.my/meetings-weddings/",
+    "statusCode": 301,
+    "pageType": "events",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "grandmargherita.com",
+    "oldUrl": "https://www.grandmargherita.com/special-offers/",
+    "newUrl": "https://hemisphere.my/offers/",
+    "statusCode": 301,
+    "pageType": "offers",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "riversidemajestic.com",
+    "oldUrl": "https://www.riversidemajestic.com/",
+    "newUrl": "https://hemisphere.my/riversidemajestic-puteri/",
+    "statusCode": 301,
+    "pageType": "home",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "riversidemajestic.com",
+    "oldUrl": "https://www.riversidemajestic.com/rooms.php",
+    "newUrl": "https://hemisphere.my/riversidemajestic-puteri/rooms/",
+    "statusCode": 301,
+    "pageType": "rooms",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "riversidemajestic.com",
+    "oldUrl": "https://www.riversidemajestic.com/river-palace.php",
+    "newUrl": "https://hemisphere.my/riversidemajestic-puteri/dining/",
+    "statusCode": 301,
+    "pageType": "dining",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "riversidemajestic.com",
+    "oldUrl": "https://www.riversidemajestic.com/mice-conventions.php",
+    "newUrl": "https://hemisphere.my/meetings-weddings/",
+    "statusCode": 301,
+    "pageType": "events",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "astana.riversidemajestic.com",
+    "oldUrl": "https://astana.riversidemajestic.com/",
+    "newUrl": "https://hemisphere.my/riversidemajestic-astana/",
+    "statusCode": 301,
+    "pageType": "home",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "astana.riversidemajestic.com",
+    "oldUrl": "https://astana.riversidemajestic.com/skyline-suites/",
+    "newUrl": "https://hemisphere.my/riversidemajestic-astana/rooms/",
+    "statusCode": 301,
+    "pageType": "rooms",
+    "priority": "High"
+  },
+  {
+    "legacyDomain": "astana.riversidemajestic.com",
+    "oldUrl": "https://astana.riversidemajestic.com/suasana-on-18/",
+    "newUrl": "https://hemisphere.my/riversidemajestic-astana/dining/",
+    "statusCode": 301,
+    "pageType": "dining",
+    "priority": "High"
+  }
+]

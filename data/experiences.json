@@ -1,0 +1,52 @@
+[
+  {
+    "id": "beach-nature",
+    "title": "Beach & Rainforest Sanctuary",
+    "eyebrow": "Coastal Serenity",
+    "tagline": "Where prehistoric rainforest greets the warm South China Sea.",
+    "description": "Santubong is where myth meets nature. Walk pristine golden sand shorelines, hike the foothills of Mount Santubong surrounded by hornbills and ancient flora, and drift into coastal sunset bliss at Damai Beach and Damai Lagoon.",
+    "properties": ["Damai Beach Resort", "Damai Lagoon Resort"],
+    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1200&q=80",
+    "highlights": ["Private crescent beach coves", "Guided rainforest eco-trails", "Sunset catamaran cruises", "Damai Golf Club links"]
+  },
+  {
+    "id": "wellness-spa",
+    "title": "Eden Damai Wellness",
+    "eyebrow": "Restorative Living",
+    "tagline": "Holistic coastal healing inspired by Borneo's sacred botanical wisdom.",
+    "description": "Surrender to therapeutic hydrotherapy, oceanfront yoga pavilions, and bespoke massage rituals utilizing indigenous wild ginger, virgin coconut oils, and Bario mineral salts at Eden Damai Wellness.",
+    "properties": ["Damai Lagoon Resort"],
+    "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=1200&q=80",
+    "highlights": ["Borneo herbal steam ritual", "Aromatherapy bath suites", "Oceanfront meditation deck", "Personalized vitality cuisine"]
+  },
+  {
+    "id": "culinary-discovery",
+    "title": "Gastronomic Heritage & Sky Dining",
+    "eyebrow": "Culinary Artistry",
+    "tagline": "From authentic Macanese heritage to 18th-floor rooftop panoramas.",
+    "description": "Sarawak is Malaysia's first UNESCO Creative City of Gastronomy. Journey through Halal Cantonese dim sum at Macau Restaurant, freshly harvested seafood at Cafe Satang, and elevated modern European fusion at Suasana on 18.",
+    "properties": ["Grand Margherita Hotel", "Riverside Majestic Astana", "Riverside Majestic Puteri"],
+    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=1200&q=80",
+    "highlights": ["Halal-certified Macau roast duck", "360-degree river view dining", "Signature Sarawak Laksa with sea prawns", "Sunset cocktails at Rajah Court"]
+  },
+  {
+    "id": "heritage-culture",
+    "title": "Borneo Culture & Riverfront Heritage",
+    "eyebrow": "Cultural Odyssey",
+    "tagline": "Step from our grand lobbies directly into Sarawak's living history.",
+    "description": "Stroll the iconic Kuching Waterfront esplanade, visit the architectural marvel of Borneo Cultures Museum, explore colonial Fort Margherita, or experience the indigenous traditions of the Sarawak Cultural Village.",
+    "properties": ["Grand Margherita Hotel", "Riverside Majestic Puteri", "Damai Beach Resort"],
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1200&q=80",
+    "highlights": ["Kuching Waterfront heritage walk", "Darul Hana musical fountain", "Sarawak Cultural Village living museum", "Traditional sampan river crossings"]
+  },
+  {
+    "id": "meetings-weddings",
+    "title": "MICE & Grand Celebrations",
+    "eyebrow": "Bespoke Gatherings",
+    "tagline": "The premier stage for international summits and fairytale weddings in Sarawak.",
+    "description": "With Sarawak's largest hotel ballrooms accommodating up to 1,200 delegates alongside beachfront romantic wedding pavilions, Hemisphere delivers flawless execution and gracious hospitality.",
+    "properties": ["Riverside Majestic Puteri", "Grand Margherita Hotel", "Damai Beach Resort"],
+    "image": "https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=1200&q=80",
+    "highlights": ["Column-free ballrooms for 1,200 pax", "Hybrid AV conference technology", "Private beach wedding lawns", "Customized international catering"]
+  }
+]

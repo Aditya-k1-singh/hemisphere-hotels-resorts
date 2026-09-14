@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hemisphere Discovery Loyalty | Hemisphere Hotels & Resorts</title>
+  <meta name="description" content="Join Hemisphere Discovery. Enjoy an instant 10% direct booking discount, room upgrades, dining credits, and bespoke privileges across Sarawak.">
+  <link rel="canonical" href="https://hemisphere.my/loyalty/">
+
+  <link rel="stylesheet" href="/assets/css/base.css">
+  <link rel="stylesheet" href="/assets/css/components.css?v=2.1">
+  <link rel="stylesheet" href="/assets/css/animations.css">
+
+  <style>
+    .loyalty-hero {
+      padding: 180px 0 80px;
+      background: linear-gradient(rgba(17, 21, 23, 0.6), rgba(17, 21, 23, 0.9)),
+                  url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color: var(--hemi-cream);
+      text-align: center;
+    }
+
+    .tier-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 24px;
+      margin-top: 48px;
+    }
+
+    .tier-card {
+      background: var(--hemi-white);
+      border-radius: 4px;
+      padding: 36px 24px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      transition: transform 0.3s ease;
+    }
+
+    .tier-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-medium);
+    }
+
+    .tier-card.featured {
+      border: 2px solid var(--hemi-brass);
+    }
+
+    .tier-badge {
+      display: inline-block;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: 2px;
+      margin-bottom: 16px;
+      align-self: flex-start;
+    }
+
+    .tier-card ul {
+      margin: 20px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      font-size: 13px;
+      color: var(--hemi-charcoal);
+    }
+
+    .tier-card ul li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+  </style>
+</head>
+<body>
+
+  <a href="#main-content" class="skip-to-content">Skip to main content</a>
+
+<header class="site-header" role="banner">
+  <div class="container">
+    <!-- Brand Logo with Bespoke Luxury Emblem -->
+    <div class="site-logo">
+      <a href="/" aria-label="Hemisphere Hotels & Resorts Homepage">
+        <svg class="logo-emblem" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <circle cx="18" cy="18" r="17" stroke="currentColor" stroke-width="1.5" stroke-dasharray="3 2" opacity="0.6"/>
+          <path d="M 6,18 A 12,12 0 0,1 30,18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+          <path d="M 10,18 C 10,24 26,24 26,18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+          <circle cx="18" cy="18" r="3" fill="currentColor"/>
+        </svg>
+        <div class="logo-text-group">
+          <span class="logo-title">HEMISPHERE</span>
+          <span class="logo-subtitle">Hotels & Resorts • Sarawak</span>
+        </div>
+      </a>
+    </div>
+
+    <!-- Primary Navigation with Mega-Menu -->
+    <nav class="site-nav" role="navigation" aria-label="Primary Navigation">
+      <ul>
+        <!-- 1. Stays with Mega-Menu -->
+        <li class="nav-item nav-item--has-mega">
+          <a href="/our-hotels-resorts/" class="nav-link">
+            Stays <svg class="nav-chevron" width="8" height="8" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </a>
+          <div class="mega-menu" role="region" aria-label="The Hemisphere Collection">
+            <div class="container">
+              <div class="mega-menu-header">
+                <div>
+                  <h3 class="mega-menu-title">The Hemisphere Collection</h3>
+                  <span class="mega-menu-subtitle">Five Distinct Sanctuaries in Sarawak, Borneo</span>
+                </div>
+                <a href="/our-hotels-resorts/" class="btn--text" style="color: var(--hemi-brass-light);">
+                  Interactive Directory & Map <span class="arrow">&rarr;</span>
+                </a>
+              </div>
+
+              <div class="mega-grid">
+                <!-- 1. Damai Beach Resort -->
+                <a href="/damaibeachresort/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">Santubong Peninsula</span>
+                    <img src="https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=400&q=80" alt="Damai Beach Resort" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Damai Beach Resort</h4>
+                    <p>Where rainforest meets the South China Sea. Beachfront chalets & clifftop pool.</p>
+                    <span class="mega-link">Explore Resort <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+
+                <!-- 2. Damai Lagoon Resort -->
+                <a href="/damailagoon/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">Coastal Wellness</span>
+                    <img src="https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=400&q=80" alt="Damai Lagoon Resort" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Damai Lagoon Resort</h4>
+                    <p>Nature, wellness & Eden Spa. Secluded bay with horizon infinity pool.</p>
+                    <span class="mega-link">Explore Resort <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+
+                <!-- 3. Grand Margherita Hotel -->
+                <a href="/grandmargherita/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">Kuching Waterfront</span>
+                    <img src="https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=600&q=80" alt="Grand Margherita Hotel" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Grand Margherita Hotel</h4>
+                    <p>Sarawak's iconic riverfront address. Halal Cantonese Macau Restaurant.</p>
+                    <span class="mega-link">Explore Hotel <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+
+                <!-- 4. Riverside Majestic Puteri -->
+                <a href="/riversidemajestic-puteri/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">5-Star Landmark</span>
+                    <img src="https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=600&q=80" alt="Riverside Majestic Puteri" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Riverside Majestic Puteri</h4>
+                    <p>Contemporary executive luxury. Puteri Ballroom for 1,200 & River Palace.</p>
+                    <span class="mega-link">Explore Hotel <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+
+                <!-- 5. Riverside Majestic Astana -->
+                <a href="/riversidemajestic-astana/" class="mega-card">
+                  <div class="mega-card__img">
+                    <span class="mega-card__tag">Boutique Skyline</span>
+                    <img src="https://images.unsplash.com/photo-1611892440504-42a792e24d32?auto=format&fit=crop&w=400&q=80" alt="Riverside Majestic Astana" loading="lazy">
+                  </div>
+                  <div class="mega-card__body">
+                    <h4>Riverside Majestic Astana</h4>
+                    <p>Panoramic glass suites & Suasana on 18 rooftop fine dining.</p>
+                    <span class="mega-link">Explore Hotel <span class="arrow">&rarr;</span></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="mega-footer">
+                <div style="font-size: 12px; color: var(--hemi-sand); display: flex; gap: 24px;">
+                  <span>🏖️ <strong>Resort Collection:</strong> Santubong Coast</span>
+                  <span>🏛️ <strong>City Collection:</strong> Kuching Waterfront</span>
+                </div>
+                <div style="font-size: 11px; text-transform: uppercase; letter-spacing: 0.14em; color: var(--hemi-brass); font-weight: 700;">
+                  ✓ Best Rate Guarantee Direct with Hemisphere
+                </div>
+              </div>
+            </div>
+          </div>
+        </li>
+
+        <!-- 2. Destinations with Dropdown -->
+        <li class="nav-item">
+          <a href="/destinations/" class="nav-link">
+            Destinations <svg class="nav-chevron" width="8" height="8" viewBox="0 0 10 6" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M1 1l4 4 4-4"/></svg>
+          </a>
+          <div class="nav-dropdown">
+            <a href="/destinations/#santubong">
+              <strong>Santubong Peninsula</strong>
+              <span>Mount Santubong, Coastal Rainforest & Beaches</span>
+            </a>
+            <a href="/destinations/#kuching">
+              <strong>Kuching Waterfront</strong>
+              <span>Sarawak River Esplanade, Heritage & Culture</span>
+            </a>
+            <a href="/destinations/" style="border-top: 1px solid rgba(255, 255, 255, 0.1); margin-top: 6px; font-weight: 700; color: var(--hemi-brass);">
+              Explore Full Destination Guide <span class="arrow">&rarr;</span>
+            </a>
+          </div>
+        </li>
+
+        <!-- 3. Experiences -->
+        <li class="nav-item">
+          <a href="/experiences/" class="nav-link">Experiences</a>
+        </li>
+
+        <!-- 4. Offers with Badge -->
+        <li class="nav-item">
+          <a href="/offers/" class="nav-link">
+            Offers <span class="nav-badge">Privileges</span>
+          </a>
+        </li>
+
+        <!-- 5. Meetings & Weddings -->
+        <li class="nav-item">
+          <a href="/meetings-weddings/" class="nav-link">Meetings & Weddings</a>
+        </li>
+
+        <!-- 6. Loyalty -->
+        <li class="nav-item">
+          <a href="/loyalty/" class="nav-link">Loyalty</a>
+        </li>
+
+        <!-- 7. About -->
+        <li class="nav-item">
+          <a href="/about/" class="nav-link">About</a>
+        </li>
+      </ul>
+    </nav>
+
+    <!-- Header Actions -->
+    <div class="header-actions">
+      <button class="lang-curr-trigger" aria-label="Select Language and Currency" title="Select Language / Currency">
+        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+          <circle cx="12" cy="12" r="10"></circle>
+          <line x1="2" y1="12" x2="22" y2="12"></line>
+          <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"></path>
+        </svg>
+        <span>EN</span> | <span>MYR</span>
+      </button>
+
+      <button class="btn-book-nav" data-trigger-booking aria-label="Open availability search and direct rates">
+        Book Now
+      </button>
+      
+      <button class="mobile-nav-toggle" aria-label="Open mobile menu" aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </div>
+  <!-- Universal Luxury Booking Modal for Header & Subpages -->
+  <hemi-booking-widget id="global-booking-modal" modal-only="true"></hemi-booking-widget>
+</header>
+
+<!-- Mobile Navigation Drawer -->
+<div class="mobile-drawer" id="mobile-nav-drawer" role="dialog" aria-modal="true" aria-label="Mobile Navigation Menu">
+  <div class="mobile-drawer-header">
+    <div class="site-logo">
+      <span class="logo-title">HEMISPHERE</span>
+      <span class="logo-subtitle">Sarawak Collection</span>
+    </div>
+    <button class="mobile-drawer-close" aria-label="Close mobile navigation">&times;</button>
+  </div>
+
+  <nav class="mobile-nav-links">
+    <a href="/our-hotels-resorts/" style="font-weight: 700; color: var(--hemi-brass-light);">The Collection Overview</a>
+    <div style="padding-left: 12px; display: flex; flex-direction: column; gap: 14px; margin: 8px 0 16px; border-left: 2px solid var(--hemi-brass);">
+      <a href="/damaibeachresort/" style="font-size: 18px;">Damai Beach Resort</a>
+      <a href="/damailagoon/" style="font-size: 18px;">Damai Lagoon Resort</a>
+      <a href="/grandmargherita/" style="font-size: 18px;">Grand Margherita Hotel</a>
+      <a href="/riversidemajestic-puteri/" style="font-size: 18px;">Riverside Majestic — Puteri</a>
+      <a href="/riversidemajestic-astana/" style="font-size: 18px;">Riverside Majestic — Astana</a>
+    </div>
+    <div class="divider divider--light"></div>
+    <a href="/destinations/">Sarawak Destinations</a>
+    <a href="/experiences/">Curated Experiences</a>
+    <a href="/offers/">Exclusive Offers</a>
+    <a href="/meetings-weddings/">Meetings & Celebrations</a>
+    <a href="/loyalty/">Hemisphere Discovery</a>
+    <a href="/about/">Our Philosophy</a>
+    <a href="/contact/">Concierge & Contact</a>
+  </nav>
+
+  <div class="mobile-drawer-footer">
+    <button class="btn btn--white" style="width:100%; margin-bottom:12px; font-weight:700;" data-trigger-booking>Reserve Your Stay</button>
+    <p style="font-size:11px; color:var(--hemi-sand); text-align:center; margin:0;">Kuching Waterfront • Santubong Peninsula • Sarawak</p>
+  </div>
+</div>
+<div class="drawer-backdrop" id="mobile-drawer-backdrop" aria-hidden="true"></div>
+
+
+
+
+
+
+
+
+
+
+
+  <main id="main-content">
+    <section class="loyalty-hero">
+      <div class="container">
+        <span class="eyebrow" style="color: var(--hemi-brass);">Guest Recognition Program</span>
+        <h1 style="font-size: var(--text-hero); margin-bottom: 20px;">Hemisphere Discovery</h1>
+        <p style="max-width: 700px; margin: 0 auto; color: var(--hemi-sand); font-size: 20px; line-height: 1.6;">
+          Your passport to genuine Sarawakian hospitality. Receive an instant 10% direct booking privilege, priority room upgrades, dining credits, and bespoke local experiences.
+        </p>
+        <div style="display: flex; gap: 16px; justify-content: center; margin-top: 32px; flex-wrap: wrap;">
+          <button class="btn btn--white" onclick="openLoyaltyModal('join')">Join Discovery for Free</button>
+          <button class="btn btn--outline-white" onclick="openLoyaltyModal('signin')">Member Sign In</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Value Proposition -->
+    <section class="section section--white">
+      <div class="container">
+        <div style="text-align: center; max-width: 800px; margin: 0 auto 56px;">
+          <span class="eyebrow">Program Privileges</span>
+          <h2 style="font-size: var(--text-h2);">Why Join Hemisphere Discovery?</h2>
+          <p style="color: var(--hemi-stone);">Membership begins the moment you enroll, with immediate rewards and seamless cross-property recognition across all five hotels and resorts.</p>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 32px;">
+          <div style="padding: 24px; background: var(--hemi-cream); border-radius: 4px; border-left: 3px solid var(--hemi-brass);">
+            <h3 style="font-size: 20px; margin-bottom: 8px;">10% Direct Rate Privilege</h3>
+            <p style="font-size: 13px; color: var(--hemi-stone); margin: 0;">Members immediately unlock 10% off Best Available Rates across all chalets, rooms, and suites.</p>
+          </div>
+          <div style="padding: 24px; background: var(--hemi-cream); border-radius: 4px; border-left: 3px solid var(--hemi-brass);">
+            <h3 style="font-size: 20px; margin-bottom: 8px;">Dining & Spa Credits</h3>
+            <p style="font-size: 13px; color: var(--hemi-stone); margin: 0;">Earn resort dining credits and exclusive rates at Macau Restaurant, Suasana on 18, and Eden Damai Wellness.</p>
+          </div>
+          <div style="padding: 24px; background: var(--hemi-cream); border-radius: 4px; border-left: 3px solid var(--hemi-brass);">
+            <h3 style="font-size: 20px; margin-bottom: 8px;">Flexible Early / Late Check</h3>
+            <p style="font-size: 13px; color: var(--hemi-stone); margin: 0;">Enjoy relaxed travel schedules with early check-in from 11:00 AM and guaranteed late check-out until 3:00 PM.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Membership Tiers -->
+    <section class="section section--sand" id="tiers">
+      <div class="container">
+        <div style="text-align: center; max-width: 700px; margin: 0 auto;">
+          <span class="eyebrow">Progression</span>
+          <h2 style="font-size: var(--text-h2);">Membership Tiers</h2>
+          <p style="color: var(--hemi-stone);">Progress through our tiers to unlock elevated benefits, bespoke amenities, and personal butler services.</p>
+        </div>
+
+        <div class="tier-grid">
+          <!-- Silver -->
+          <div class="tier-card">
+            <span class="tier-badge" style="background: #EAEAEB; color: #555;">Silver (Entry)</span>
+            <h3 style="font-size: 24px; margin-bottom: 4px;">Silver</h3>
+            <p style="font-size: 12px; color: var(--hemi-stone);">Upon complimentary enrollment</p>
+            <ul>
+              <li>✓ 10% Member Rate Discount</li>
+              <li>✓ High-speed Fiber Wi-Fi</li>
+              <li>✓ 10% Dining Discount (Food only)</li>
+              <li>✓ Member-only seasonal flash sales</li>
+            </ul>
+            <button class="btn btn--sm btn--outline" onclick="openLoyaltyModal('join')" style="margin-top: auto;">Join as Silver</button>
+          </div>
+
+          <!-- Gold -->
+          <div class="tier-card featured">
+            <span class="tier-badge" style="background: #C5A880; color: #111;">Gold (Most Popular)</span>
+            <h3 style="font-size: 24px; margin-bottom: 4px;">Gold</h3>
+            <p style="font-size: 12px; color: var(--hemi-stone);">10 Nights or MYR 3,000 Spend</p>
+            <ul>
+              <li>✓ All Silver Privileges</li>
+              <li>✓ 15% Member Dining Discount</li>
+              <li>✓ Priority Room Upgrade (subject to availability)</li>
+              <li>✓ 2:00 PM Late Check-out</li>
+              <li>✓ Welcome Local Borneo Treats</li>
+            </ul>
+            <button class="btn btn--sm" onclick="openLoyaltyModal('join')" style="margin-top: auto;">Join Now</button>
+          </div>
+
+          <!-- Platinum -->
+          <div class="tier-card">
+            <span class="tier-badge" style="background: #2B3338; color: #FFF;">Platinum</span>
+            <h3 style="font-size: 24px; margin-bottom: 4px;">Platinum</h3>
+            <p style="font-size: 12px; color: var(--hemi-stone);">25 Nights or MYR 8,000 Spend</p>
+            <ul>
+              <li>✓ All Gold Privileges</li>
+              <li>✓ Guaranteed Room Upgrade</li>
+              <li>✓ 3:00 PM Late Check-out</li>
+              <li>✓ Executive Club Lounge Access</li>
+              <li>✓ 20% Spa Discount at Eden Damai</li>
+            </ul>
+            <button class="btn btn--sm btn--outline" onclick="openLoyaltyModal('join')" style="margin-top: auto;">Inquire Tier Match</button>
+          </div>
+
+          <!-- Black -->
+          <div class="tier-card" style="background: #111517; color: #FFF;">
+            <span class="tier-badge" style="background: var(--hemi-brass); color: #111;">Black (Invitation)</span>
+            <h3 style="font-size: 24px; margin-bottom: 4px; color: var(--hemi-brass);">Black</h3>
+            <p style="font-size: 12px; color: var(--hemi-sand);">By Exclusive Invitation Only</p>
+            <ul style="color: var(--hemi-cream);">
+              <li>✓ Unlimited Suite Upgrades</li>
+              <li>✓ 24-Hour Flexible Check-in/out</li>
+              <li>✓ Dedicated Personal Concierge</li>
+              <li>✓ Complimentary Airport Limousine</li>
+              <li>✓ Bespoke Chef's Table Invitations</li>
+            </ul>
+            <button class="btn btn--sm btn--white" onclick="alert('Black Tier membership is awarded by invitation from the Hemisphere Executive Committee.');" style="margin-top: auto;">Invitation Only</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Loyalty Modal (Sign In / Register) -->
+  <div class="modal-overlay" id="loyalty-modal" role="dialog" aria-modal="true">
+    <div class="modal-container">
+      <button class="modal-close" onclick="closeLoyaltyModal()" aria-label="Close modal">&times;</button>
+      <h3 id="loyalty-modal-title" style="font-family: var(--font-display); font-size: 28px; margin-bottom: 12px;">Join Hemisphere Discovery</h3>
+      <p id="loyalty-modal-desc" style="font-size: 13px; color: var(--hemi-stone); margin-bottom: 24px;">Enroll complimentary today to receive instant 10% direct booking discounts.</p>
+      
+      <form onsubmit="event.preventDefault(); alert('Welcome to Hemisphere Discovery! Your member ID has been sent to your email.'); closeLoyaltyModal();">
+        <div style="display:flex; flex-direction:column; gap:16px; margin-bottom:24px;">
+          <div>
+            <label style="font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--hemi-stone); display:block; margin-bottom:4px;">Full Name</label>
+            <input type="text" required placeholder="e.g. Eleanor Vance" style="width:100%; padding:12px; border:1px solid var(--hemi-sand); border-radius:2px;">
+          </div>
+          <div>
+            <label style="font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--hemi-stone); display:block; margin-bottom:4px;">Email Address</label>
+            <input type="email" required placeholder="name@domain.com" style="width:100%; padding:12px; border:1px solid var(--hemi-sand); border-radius:2px;">
+          </div>
+          <div>
+            <label style="font-size:11px; text-transform:uppercase; letter-spacing:0.1em; color:var(--hemi-stone); display:block; margin-bottom:4px;">Country of Residence</label>
+            <select style="width:100%; padding:12px; border:1px solid var(--hemi-sand); border-radius:2px; background:white;">
+              <option>Malaysia</option>
+              <option>Singapore</option>
+              <option>United Kingdom</option>
+              <option>Australia</option>
+              <option>United States</option>
+              <option>Other International</option>
+            </select>
+          </div>
+        </div>
+        <button type="submit" class="btn" style="width:100%;">Complete Enrollment</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer" role="contentinfo">
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <h3 style="font-family: var(--font-display); letter-spacing: 0.12em;">HEMISPHERE</h3>
+        <p style="color: var(--hemi-brass); font-family: var(--font-display); font-size: 16px; margin-bottom: 12px;">One Hemisphere. Many Ways to Belong.</p>
+        <p>A distinguished portfolio of luxury beachfront resorts and iconic riverfront city hotels celebrating the nature, culture, and heartfelt hospitality of Sarawak, Malaysia.</p>
+      </div>
+
+      <div class="footer-col">
+        <h4>Our Stays</h4>
+        <ul>
+          <li><a href="/damaibeachresort/">Damai Beach Resort</a></li>
+          <li><a href="/damailagoon/">Damai Lagoon Resort</a></li>
+          <li><a href="/grandmargherita/">Grand Margherita Hotel</a></li>
+          <li><a href="/riversidemajestic-puteri/">Riverside Majestic — Puteri</a></li>
+          <li><a href="/riversidemajestic-astana/">Riverside Majestic — Astana</a></li>
+          <li><a href="/our-hotels-resorts/">Interactive Map Directory</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Discover</h4>
+        <ul>
+          <li><a href="/destinations/">Sarawak & Kuching Guide</a></li>
+          <li><a href="/experiences/">Curated Experiences</a></li>
+          <li><a href="/offers/">Offers & Packages</a></li>
+          <li><a href="/meetings-weddings/">Meetings & Weddings</a></li>
+          <li><a href="/loyalty/">Hemisphere Discovery</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>About</h4>
+        <ul>
+          <li><a href="/about/">Our Philosophy</a></li>
+          <li><a href="/contact/">Concierge & Reservations</a></li>
+          <li><a href="/destinations/#sustainability">Sustainability & Heritage</a></li>
+          <li><a href="/contact/#press">Media Inquiries</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <ul>
+          <li><a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a></li>
+          <li><a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a></li>
+          <li><a href="https://linkedin.com" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><a href="https://youtube.com" target="_blank" rel="noopener">YouTube</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-newsletter">
+      <div class="newsletter-text">
+        <h4>Stay Connected to Sarawak</h4>
+        <p>Subscribe to receive private invitations, bespoke seasonal privileges, and travel stories from Borneo.</p>
+      </div>
+      <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Thank you for subscribing to Hemisphere Private Invitations.');">
+        <input type="email" class="newsletter-input" placeholder="Your Email Address" required aria-label="Your Email Address">
+        <button type="submit" class="btn btn--white" style="font-size: 11px;">Subscribe</button>
+      </form>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="copyright">
+        &copy; <span id="footer-year">2026</span> Hemisphere Hotels & Resorts. SEDC Sarawak Hospitality Division. All rights reserved.
+      </div>
+      <div class="footer-legal-links">
+        <a href="/privacy/">Privacy Policy</a>
+        <a href="/terms/">Terms of Stay</a>
+        <a href="/cookie-policy/">Cookie Preferences</a>
+        <a href="/accessibility/">Accessibility</a>
+        <a href="/sitemap.xml">Sitemap</a>
+      </div>
+    </div>
+  </div>
+</footer>
+<script>
+  const y = document.getElementById('footer-year');
+  if (y) y.textContent = new Date().getFullYear();
+</script>
+
+
+  <script src="/assets/js/booking-widget.js" type="module"></script>
+  <script src="/assets/js/app.js" type="module"></script>
+  <script>
+    function openLoyaltyModal(mode) {
+      const modal = document.getElementById('loyalty-modal');
+      const title = document.getElementById('loyalty-modal-title');
+      const desc = document.getElementById('loyalty-modal-desc');
+      if (mode === 'signin') {
+        title.textContent = 'Member Sign In';
+        desc.textContent = 'Access your Hemisphere Discovery account and manage reservations.';
+      } else {
+        title.textContent = 'Join Hemisphere Discovery';
+        desc.textContent = 'Enroll complimentary today to receive instant 10% direct booking discounts.';
+      }
+      modal.classList.add('active');
+    }
+
+    function closeLoyaltyModal() {
+      document.getElementById('loyalty-modal').classList.remove('active');
+    }
+  </script>
+</body>
+</html>

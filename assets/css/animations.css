@@ -1,0 +1,135 @@
+/* ==========================================================================
+   HEMISPHERE HOTELS & RESORTS — ANIMATIONS & MICRO-INTERACTIONS
+   ========================================================================== */
+
+/* Keyframe Reveals */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes floatSubtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-6px);
+  }
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 10px rgba(197, 168, 128, 0.3);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(197, 168, 128, 0.7);
+  }
+}
+
+.fade-in {
+  animation: fadeIn var(--duration-med) var(--ease-reveal) forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp var(--duration-slow) var(--ease-reveal) forwards;
+}
+
+.delay-1 { animation-delay: 150ms; }
+.delay-2 { animation-delay: 300ms; }
+.delay-3 { animation-delay: 450ms; }
+.delay-4 { animation-delay: 600ms; }
+
+/* Subtle reveal on scroll observer class */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity var(--duration-slow) var(--ease-reveal), transform var(--duration-slow) var(--ease-reveal);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Specular Luxury Light Sweep */
+@keyframes luxurySheen {
+  0% {
+    transform: translate3d(-120%, -50%, 0) rotate(25deg);
+    opacity: 0;
+  }
+  20% {
+    opacity: 0.7;
+  }
+  100% {
+    transform: translate3d(220%, -50%, 0) rotate(25deg);
+    opacity: 0;
+  }
+}
+
+/* Floating Micro-Badge Glow */
+@keyframes badgeBreathe {
+  0%, 100% {
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3), 0 0 0 1px rgba(197, 168, 128, 0.25);
+  }
+  50% {
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.4), 0 0 0 1px rgba(197, 168, 128, 0.55);
+  }
+}
+
+/* Kinetic Arrow Micro-Interaction for Links */
+.btn--text,
+.mega-link,
+a.btn--text {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: color var(--duration-fast) var(--ease-reveal);
+}
+
+.arrow,
+.btn--text span.arrow,
+.mega-link span.arrow {
+  display: inline-block;
+  transition: transform var(--duration-med) var(--ease-luxury), color var(--duration-med);
+}
+
+.property-card:hover .btn--text,
+.mega-card:hover .mega-link,
+.dir-card:hover .btn--text,
+.btn--text:hover {
+  color: var(--hemi-brass-light) !important;
+}
+
+.property-card:hover .arrow,
+.mega-card:hover .arrow,
+.dir-card:hover .arrow,
+.btn--text:hover .arrow {
+  transform: translateX(6px);
+  color: var(--hemi-brass-light);
+}
+
+/* Reduced Motion Override */
+@media (prefers-reduced-motion: reduce) {
+  .fade-in, .fade-in-up, .reveal-on-scroll {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .property-card, .room-card, .dining-card, .offer-card, .mega-card, .dir-card, .exp-card {
+    transition: none !important;
+    transform: none !important;
+  }
+}

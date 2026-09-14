@@ -1,0 +1,117 @@
+{
+  "slug": "riversidemajestic-puteri",
+  "name": "Riverside Majestic Hotel — Puteri Wing",
+  "type": "city-hotel",
+  "brandTagline": "Contemporary luxury beside Kuching's waterfront.",
+  "location": "Jalan Tunku Abdul Rahman, 93100 Kuching, Sarawak, Malaysia",
+  "cluster": "Kuching Waterfront",
+  "accentColor": "#1B3B5C",
+  "accentColorDark": "#0F253D",
+  "heroMedia": {
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=1920&q=80",
+    "alt": "Riverside Majestic Hotel Puteri Wing commanding the Kuching riverfront"
+  },
+  "story": "Soaring above the heart of Sarawak's capital, the Puteri Wing of Riverside Majestic Hotel offers 5-star international refinement. Blending stately comfort, the esteemed Puteri Grand Ballroom, and panoramic river vistas, it serves as the chosen address for high-level delegations, corporate leaders, and leisure connoisseurs.",
+  "keyStats": {
+    "rooms": 241,
+    "distanceToAirportKm": 11,
+    "distanceToCityKm": 0,
+    "ballroomCapacity": 1200,
+    "pools": 1
+  },
+  "rooms": [
+    {
+      "id": "puteri-superior",
+      "name": "Puteri Superior Room",
+      "size_sqm": 34,
+      "size_sqft": 366,
+      "bed": "1 King or 2 Single Beds",
+      "occupancy": "2 Adults",
+      "view": "Kuching Urban Skyline",
+      "description": "Ergonomic sophistication featuring modern timber finishes, plush bedding, high-speed connectivity, and an executive work hub.",
+      "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["High-speed Wi-Fi", "Ergonomic Desk", "Marble Bathroom", "LED Smart TV", "Minibar", "In-room Safe"]
+    },
+    {
+      "id": "puteri-deluxe-river",
+      "name": "Puteri Deluxe River View",
+      "size_sqm": 38,
+      "size_sqft": 409,
+      "bed": "1 King Bed",
+      "occupancy": "2 Adults, 1 Child",
+      "view": "Sarawak River & Fort Margherita",
+      "description": "Commanding high-floor panoramas across the winding Sarawak River, historic Fort Margherita, and golden sunsets.",
+      "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["River Panorama", "Deep Soaking Tub", "Complimentary Gourmet Coffee", "Plush Bathrobes", "Soundproof Glazing"]
+    },
+    {
+      "id": "puteri-club-suite",
+      "name": "Puteri Executive Club Suite",
+      "size_sqm": 72,
+      "size_sqft": 775,
+      "bed": "1 King Bed",
+      "occupancy": "2 Adults, 1 Child",
+      "view": "Panoramic River & Waterfront Esplanade",
+      "description": "An opulent suite featuring a dedicated conference table, private living room, marble bathroom with whirlpool tub, and exclusive Club Lounge privileges.",
+      "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["Executive Club Lounge Privileges", "Private Meeting Room Usage", "Whirlpool Marble Bath", "Evening Wine & Canapés"]
+    }
+  ],
+  "dining": [
+    {
+      "id": "river-palace",
+      "name": "River Palace Restaurant",
+      "concept": "Authentic Cantonese Gastronomy & Handcrafted Dim Sum",
+      "cuisine": "Cantonese Fine Dining",
+      "hours": "11:30 AM – 2:30 PM, 6:00 PM – 10:00 PM",
+      "signatureDishes": ["Peking Duck Two Ways", "Steamed Fresh Water Prawns with Egg White", "Crispy Abalone Pastry"],
+      "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Smart Casual"
+    },
+    {
+      "id": "cafe-majestic",
+      "name": "Cafe Majestic",
+      "concept": "Contemporary All-Day International Buffet & Local Icons",
+      "cuisine": "Sarawakian / International",
+      "hours": "6:00 AM – 11:00 PM",
+      "signatureDishes": ["Sarawak Laksa Special", "Grilled Ribeye with Sarawak Black Pepper", "Majestic Durian Cheesecake"],
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Casual"
+    },
+    {
+      "id": "riverstone-lounge",
+      "name": "Riverstone Lounge",
+      "concept": "Live Acoustic Music, Single Malts & Handcrafted Cocktails",
+      "cuisine": "Cocktail Lounge",
+      "hours": "4:00 PM – 1:00 AM",
+      "signatureDishes": ["Sarawak Pepper Old Fashioned", "Smoked Duck Bruschetta", "Single Malt Flight"],
+      "image": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Smart Casual"
+    }
+  ],
+  "facilities": [
+    "Puteri Grand Ballroom (Up to 1,200 Guests)",
+    "Riverside Outdoor Swimming Pool",
+    "Fully Equipped Gymnasium & Aerobics Studio",
+    "Indoor Squash Courts",
+    "Executive Club Lounge with Private River Deck",
+    "Direct Covered Walkway to Riverside Shopping Complex"
+  ],
+  "eventSpaces": [
+    {
+      "name": "Puteri Grand Ballroom",
+      "capacity": { "theatre": 1200, "banquet": 850, "classroom": 600 },
+      "sqm": 1350
+    },
+    {
+      "name": "Santubong Boardroom",
+      "capacity": { "theatre": 50, "banquet": 30, "classroom": 24 },
+      "sqm": 65
+    }
+  ],
+  "nearbyAttractions": [
+    { "name": "Kuching Waterfront & Darul Hana Bridge", "distance": "Steps away (100m)" },
+    { "name": "Riverside Shopping Complex", "distance": "Adjacent (Direct access)" },
+    { "name": "Carpenter Street Heritage Quarter", "distance": "400m" }
+  ]
+}

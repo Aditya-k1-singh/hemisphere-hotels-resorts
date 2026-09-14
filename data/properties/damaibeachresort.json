@@ -1,0 +1,107 @@
+{
+  "slug": "damaibeachresort",
+  "name": "Damai Beach Resort",
+  "type": "coastal-resort",
+  "brandTagline": "Where rainforest meets the South China Sea.",
+  "location": "Teluk Bandung, Santubong, 93756 Kuching, Sarawak, Malaysia",
+  "cluster": "Santubong Peninsula",
+  "accentColor": "#1C5D57",
+  "accentColorDark": "#0F3A36",
+  "heroMedia": {
+    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=1920&q=80",
+    "alt": "Damai Beach Resort beachfront view at sunset with Mount Santubong"
+  },
+  "story": "Nestled on 90 acres of lush primeval rainforest, Damai Beach Resort stands between the emerald slopes of legendary Mount Santubong and the azure waters of the South China Sea. Offering timeless Malaysian chalet architecture, private pristine beaches, and rejuvenating nature trails, it is Sarawak's premier coastal sanctuary.",
+  "keyStats": {
+    "rooms": 252,
+    "distanceToAirportKm": 42,
+    "distanceToCityKm": 35,
+    "beaches": "Private Golden Sand Cove",
+    "pools": 2
+  },
+  "rooms": [
+    {
+      "id": "superior-pool-view",
+      "name": "Superior Pool View Room",
+      "size_sqm": 35,
+      "size_sqft": 376,
+      "bed": "1 King or 2 Single Beds",
+      "occupancy": "2 Adults, 1 Child",
+      "view": "Resort Pool & Garden",
+      "description": "Crisp contemporary interior featuring indigenous Sarawakian timber accents and a private balcony overlooking the freeform swimming pool.",
+      "image": "https://images.unsplash.com/photo-1590490360182-c33d57733427?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["Private Balcony", "Complimentary Wi-Fi", "Rain Shower", "Tea & Coffee Maker", "LED TV", "Minibar"]
+    },
+    {
+      "id": "deluxe-chalet-sea-facing",
+      "name": "Deluxe Chalet (Sea Facing)",
+      "size_sqm": 42,
+      "size_sqft": 452,
+      "bed": "1 King Bed",
+      "occupancy": "2 Adults, 1 Child",
+      "view": "South China Sea & Beach",
+      "description": "Individual coastal timber chalet perched among lush flora, offering panoramic sunset sea views and the soothing sound of the surf.",
+      "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["Direct Ocean Panorama", "Timber Sundeck", "Deep Soaking Tub", "In-Room Safe", "Espresso Machine", "Pillow Menu"]
+    },
+    {
+      "id": "clifftop-executive-suite",
+      "name": "Clifftop Executive Suite",
+      "size_sqm": 78,
+      "size_sqft": 840,
+      "bed": "1 King Bed",
+      "occupancy": "2 Adults, 2 Children",
+      "view": "Elevated Horizon Sea & Mount Santubong",
+      "description": "Perched on the clifftop with an expansive private terrace, separate living room, and bespoke timber craftsmanship for unparalleled tranquility.",
+      "image": "https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["Panoramic Clifftop Terrace", "Separate Living & Dining Area", "Luxury Bath Amenities", "Personal Concierge Service", "High-speed Wi-Fi"]
+    }
+  ],
+  "dining": [
+    {
+      "id": "cafe-satang",
+      "name": "Cafe Satang",
+      "concept": "All-Day International & Sarawakian Specialties",
+      "cuisine": "Sarawakian / International Buffet",
+      "hours": "6:30 AM – 10:30 PM",
+      "signatureDishes": ["Authentic Sarawak Laksa", "Manok Pansoh (Bamboo Chicken)", "Fresh Catch Seafood Grill"],
+      "image": "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Resort Casual"
+    },
+    {
+      "id": "santubong-bar",
+      "name": "Santubong Sunset Bar",
+      "concept": "Open-air Beachfront Sunset Cocktails & Light Fare",
+      "cuisine": "Artisanal Cocktails & Tapas",
+      "hours": "4:00 PM – Midnight",
+      "signatureDishes": ["Borneo Tuak Mojito", "Calamari Fritti", "Sunset Sangria"],
+      "image": "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Casual Beachwear"
+    }
+  ],
+  "facilities": [
+    "Two Free-form Freshwater Swimming Pools",
+    "Private Sandy Beach & Water Sports Pavilion",
+    "Jungle Trekking Trails to Mount Santubong Foothills",
+    "Santubong Grand Ballroom (800 Guests)",
+    "Children's Splash Pool & Recreation Centre",
+    "Outdoor Beach Volleyball & Tennis Courts"
+  ],
+  "eventSpaces": [
+    {
+      "name": "Santubong Grand Ballroom",
+      "capacity": { "theatre": 800, "banquet": 600, "classroom": 400 },
+      "sqm": 850
+    },
+    {
+      "name": "Satang Function Room",
+      "capacity": { "theatre": 120, "banquet": 80, "classroom": 60 },
+      "sqm": 160
+    }
+  ],
+  "nearbyAttractions": [
+    { "name": "Sarawak Cultural Village", "distance": "5 mins walk (400m)" },
+    { "name": "Mount Santubong National Park Trailhead", "distance": "1 km" },
+    { "name": "Damai Golf Club (Arnold Palmer Design)", "distance": "2 km" }
+  ]
+}

@@ -1,0 +1,102 @@
+{
+  "slug": "damailagoon",
+  "name": "Damai Lagoon Resort",
+  "type": "wellness-resort",
+  "brandTagline": "Nature, wellness and effortless escape.",
+  "location": "Teluk Penyuk, Santubong, 93756 Kuching, Sarawak, Malaysia",
+  "cluster": "Santubong Peninsula",
+  "accentColor": "#215368",
+  "accentColorDark": "#133644",
+  "heroMedia": {
+    "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=1920&q=80",
+    "alt": "Damai Lagoon Resort infinity pool and serene coastal bay"
+  },
+  "story": "Set upon a secluded crescent bay, Damai Lagoon Resort embodies coastal tranquility and restorative wellness. Featuring modern organic architecture, infinity pools that blend into the South China Sea, and the signature Eden Damai Wellness spa sanctuary, this is Sarawak's premier destination for quiet luxury.",
+  "keyStats": {
+    "rooms": 160,
+    "distanceToAirportKm": 43,
+    "distanceToCityKm": 36,
+    "spa": "Eden Damai Wellness (8 Suites)",
+    "pools": 1
+  },
+  "rooms": [
+    {
+      "id": "deluxe-lagoon-view",
+      "name": "Deluxe Lagoon Room",
+      "size_sqm": 40,
+      "size_sqft": 430,
+      "bed": "1 King Bed or 2 Twin Beds",
+      "occupancy": "2 Adults",
+      "view": "Tranquil Lagoon & Coastal Gardens",
+      "description": "Contemporary minimalist aesthetics with warm earth tones, deep freestanding soaking tub, and a private timber verandah facing the lagoon.",
+      "image": "https://images.unsplash.com/photo-1591088398332-8a7791972843?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["Freestanding Bathtub", "Botanical Bath Salts", "Lagoon Verandah", "High-speed Wi-Fi", "Smart Entertainment System"]
+    },
+    {
+      "id": "executive-sea-view-suite",
+      "name": "Executive Sea View Suite",
+      "size_sqm": 68,
+      "size_sqft": 732,
+      "bed": "1 King Bed",
+      "occupancy": "2 Adults, 1 Child",
+      "view": "Unobstructed South China Sea Horizon",
+      "description": "Generous open-plan suite featuring floor-to-ceiling glass, custom woven Sarawakian textures, expansive living salon, and private sunbed terrace.",
+      "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["Direct Ocean Frontage", "Terrace Sunbeds", "Nespresso Machine", "In-Suite Check-in", "Pillow Menu"]
+    },
+    {
+      "id": "eden-lagoon-villa",
+      "name": "Eden Lagoon Villa",
+      "size_sqm": 110,
+      "size_sqft": 1184,
+      "bed": "1 King Bed",
+      "occupancy": "2 Adults, 2 Children",
+      "view": "Private Cove & Tropical Canopy",
+      "description": "Exclusive private sanctuary with outdoor rain shower, private plunge pool, and personalized wellness concierge service.",
+      "image": "https://images.unsplash.com/photo-1540555700478-4be289fbecef?auto=format&fit=crop&w=800&q=80",
+      "amenities": ["Private Plunge Pool", "Outdoor Rainforest Shower", "Eden Spa Priority Access", "Complimentary Daily Sunset High Tea"]
+    }
+  ],
+  "dining": [
+    {
+      "id": "lagoon-terrace",
+      "name": "Lagoon Terrace",
+      "concept": "Farm-to-Table Coastal Dining & Fresh Seafood",
+      "cuisine": "Modern Pan-Asian & Mediterranean",
+      "hours": "7:00 AM – 10:00 PM",
+      "signatureDishes": ["Santubong Prawn Carpaccio", "Midin Herb Risotto", "Wood-fired Barramundi"],
+      "image": "https://images.unsplash.com/photo-1550966871-3ed3cdb5ed0c?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Smart Resort Casual"
+    },
+    {
+      "id": "sunset-wellness-lounge",
+      "name": "The Sunset Lounge",
+      "concept": "Botanical Elixirs, Organic Teas & Twilight Cocktails",
+      "cuisine": "Artisan Mixology & Light Bites",
+      "hours": "11:00 AM – 11:00 PM",
+      "signatureDishes": ["Borneo Lemongrass Fizz", "Heritage Afternoon Tea", "Truffle Taro Chips"],
+      "image": "https://images.unsplash.com/photo-1510812431401-41d2bd2722f3?auto=format&fit=crop&w=800&q=80",
+      "dressCode": "Casual Elegant"
+    }
+  ],
+  "facilities": [
+    "Eden Damai Wellness & Hydrotherapy Spa",
+    "Panoramic Infinity Horizon Pool",
+    "Open-air Yoga & Meditation Pavilion",
+    "Private Secluded Beach Cove",
+    "Technogym Equipped Wellness Studio",
+    "Bespoke Destination Wedding Lawns"
+  ],
+  "eventSpaces": [
+    {
+      "name": "Penyuk Ocean Pavilion",
+      "capacity": { "theatre": 200, "banquet": 150, "classroom": 100 },
+      "sqm": 240
+    }
+  ],
+  "nearbyAttractions": [
+    { "name": "Mount Santubong Botanical Trail", "distance": "800m" },
+    { "name": "Sarawak Cultural Village", "distance": "1.5 km" },
+    { "name": "Salak River Mangrove Cruise", "distance": "5 km" }
+  ]
+}

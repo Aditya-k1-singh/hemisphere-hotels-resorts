@@ -1,0 +1,104 @@
+[
+  {
+    "id": "sarawak-resident-escape",
+    "title": "Sarawak Resident & Regional Privilege",
+    "category": "stays",
+    "propertySlug": "all",
+    "propertyName": "All Hemisphere Properties",
+    "validity": "Valid through 31 Dec 2026",
+    "tag": "Up to 25% Off",
+    "summary": "Enjoy preferential resident rates with daily complimentary artisan breakfast, late 3:00 PM checkout, and dining credits across our five properties.",
+    "inclusions": [
+      "20% off Best Available Rate for rooms and chalets",
+      "Daily gourmet breakfast for two guests",
+      "MYR 80 resort dining credit per stay",
+      "Guaranteed late check-out until 3:00 PM (subject to availability)"
+    ],
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "coastal-eden-wellness-retreat",
+    "title": "Eden Coastal Wellness Journey",
+    "category": "wellness",
+    "propertySlug": "damailagoon",
+    "propertyName": "Damai Lagoon Resort",
+    "validity": "Valid through 15 Nov 2026",
+    "tag": "Wellness Package",
+    "summary": "Immerse yourself in three days of restorative coastal healing, bespoke herbal therapies, and healthy organic gastronomy overlooking the South China Sea.",
+    "inclusions": [
+      "Luxury Suite accommodation with private lagoon terrace",
+      "Signature 90-minute Eden Botanical Massage for two",
+      "Daily sunset botanical elixir and chef's wellness dinner",
+      "Complimentary morning yoga session on the ocean deck"
+    ],
+    "image": "https://images.unsplash.com/photo-1571896349842-33c89424de2d?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "rainforest-beach-family-adventure",
+    "title": "Santubong Family Rainforest Discovery",
+    "category": "family",
+    "propertySlug": "damaibeachresort",
+    "propertyName": "Damai Beach Resort",
+    "validity": "Valid through 30 Dec 2026",
+    "tag": "Family Package",
+    "summary": "Create lifelong memories with connecting beachfront chalets, guided Mount Santubong nature walks, and tickets to the Sarawak Cultural Village.",
+    "inclusions": [
+      "Chalet stay with complimentary stay & dine for up to 2 children under 12",
+      "Family passes to the nearby Sarawak Cultural Village",
+      "Guided rainforest eco-trail exploration with resort naturalist",
+      "Daily buffet breakfast at Cafe Satang"
+    ],
+    "image": "https://images.unsplash.com/photo-1582719508461-905c673771fd?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "suasana-skyline-romance",
+    "title": "Skyline Romance & River Sunset",
+    "category": "romance",
+    "propertySlug": "riversidemajestic-astana",
+    "propertyName": "Riverside Majestic Astana Wing",
+    "validity": "Valid year-round",
+    "tag": "Romance Package",
+    "summary": "An elevated celebration of love on the 18th floor with bottle of chilled Champagne, 4-course bespoke dinner at Suasana on 18, and rose petal bath.",
+    "inclusions": [
+      "Astana Executive Club Room with skyline panorama",
+      "4-course candlelit dinner at Suasana on 18 with wine pairing",
+      "Bottle of French Champagne & artisanal chocolates on arrival",
+      "In-suite breakfast overlooking the Sarawak River"
+    ],
+    "image": "https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "heritage-riverfront-dimsum",
+    "title": "Macau Gastronomic Heritage Weekend",
+    "category": "dining",
+    "propertySlug": "grandmargherita",
+    "propertyName": "Grand Margherita Hotel",
+    "validity": "Valid on Weekends",
+    "tag": "Dining Offer",
+    "summary": "A tribute to Kuching's culinary heritage. Experience our celebrated Weekend Dim Sum Brunch at Macau Restaurant coupled with riverfront room privileges.",
+    "inclusions": [
+      "Overnight stay in a Deluxe River View Room",
+      "Complimentary Dim Sum feast for two at Halal-certified Macau Restaurant",
+      "Complimentary riverfront cocktail at Rajah Court Lounge",
+      "Special discounts at Sarawak Plaza partner boutiques"
+    ],
+    "image": "https://images.unsplash.com/photo-1555396273-367ea4eb4db5?auto=format&fit=crop&w=800&q=80"
+  },
+  {
+    "id": "mice-executive-delegate",
+    "title": "Hemisphere MICE Delegate Privilege",
+    "category": "business",
+    "propertySlug": "riversidemajestic-puteri",
+    "propertyName": "Riverside Majestic Puteri Wing",
+    "validity": "Valid through 31 Dec 2026",
+    "tag": "Corporate Special",
+    "summary": "Host seamless international conferences with state-of-the-art AV technology, high-speed hybrid meeting facilities, and customized delegate banqueting.",
+    "inclusions": [
+      "Preferential delegate room block rates",
+      "Dedicated MICE event planner and technical concierge",
+      "Full day meeting package with themed coffee breaks",
+      "Complimentary upgrade to Puteri Suite for VIP event organizer"
+    ],
+    "image": "https://images.unsplash.com/photo-1618773928121-c32242e63f39?auto=format&fit=crop&w=800&q=80"
+  }
+]

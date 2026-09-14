@@ -1,0 +1,6 @@
+# Hemisphere Hotels & Resorts — Robots Directive
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://hemisphere.my/sitemap.xml
