@@ -4,8 +4,8 @@
   "private": true,
   "description": "Hemisphere Hotels & Resorts - Luxury Hospitality Digital Experience",
   "scripts": {
-    "build": "node build.js",
     "dev": "node server.js",
-    "start": "node server.js"
+    "start": "node server.js",
+    "compile": "node build.js"
   }
 }
